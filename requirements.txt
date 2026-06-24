@@ -3,3 +3,7 @@ numpy
 scikit-learn
 optuna
 xgboost
+langgraph
+langchain-core
+langchain-mistralai
+python-dotenv
