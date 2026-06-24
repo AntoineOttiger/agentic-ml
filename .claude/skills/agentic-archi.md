@@ -77,16 +77,20 @@ L'agent s'arrête dès qu'**une** des conditions est remplie :
 ## Tools
 
 ### `get_dataset_profile() -> profile`
+
 Renvoie en **un seul appel** l'ensemble des métadonnées du dataset (taille, noms/ranges des features et outputs, type de tâche, distribution des classes). Remplace les 5 appels séquentiels précédents. *En pratique, ce profil est injecté dès l'initialisation ; le tool reste disponible si l'agent a besoin de le re-consulter.*
 
 ### `get_model_schema(model_type) -> schema`
+
 Renvoie un **dict typé** décrivant les hyperparamètres valides du modèle demandé : noms, valeurs par défaut, bornes/ranges autorisés, type. Source fiable et testable sans LLM, pour les faits structurés (les espaces d'hyperparamètres de XGBoost, RF et SVM n'ont presque rien en commun). À utiliser pour cadrer toute proposition de configuration.
 
 ### `query_ml_knowledge_base(request) -> response`
+
 Système RAG renvoyant le chunk le plus pertinent. Réservé au **savoir libre / qualitatif** : « quel modèle pour des classes déséquilibrées », « comment réduire l'overfitting d'un SVM », etc. **N'est pas utilisé** pour récupérer des noms/ranges d'hyperparamètres précis (→ `get_model_schema`).
 
-### `launch_ml_pipeline(model_type, hyperparameters) -> {train_f1, eval_f1}`
-Lance la pipeline d'entraînement et renvoie le F1-score sur le train et sur l'éval.
+### `launch_ml_pipeline(model_type, search_space) -> {train_f1, eval_f1, overfitting_score, best_hyperparams}`
+
+Lance la pipeline d'optimisation ml (training/optimizer/HyperparameterOptimizer).
 **Validation préalable** : les hyperparamètres sont vérifiés contre le schéma du modèle. Si un nom est inconnu ou une valeur hors-range, le tool renvoie une **erreur structurée** que l'agent peut lire et corriger, plutôt qu'un crash ou un comportement silencieux.
 
 ## Observabilité

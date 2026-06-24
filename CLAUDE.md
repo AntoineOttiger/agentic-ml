@@ -13,7 +13,7 @@ Automatisation de la recherche de modèle ML et d'hyperparamètres via un agent 
 - `notebooks/` → exploration
 - `scripts/prepare_data.py` → CLI pour `DataSplitter` (aucune logique métier)
 - `src/agentic_ml/data/prepare_data.py` → `DataSplitter` : split stratifié 2way ou 3way
-- `src/agentic_ml/training`
+- `src/agentic_ml/training`→ module de gestion taining/eval/optim des models , HyperparameterOptimizer à utiliser par l'agent
 - `src/agentic_ml/config.py` → chemins et constantes centralisés
 - `tests/` → vide (agent non encore implémenté)
 

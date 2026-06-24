@@ -18,6 +18,9 @@ from agentic_ml.config import (
 from agentic_ml.training import HyperparameterOptimizer, available_models
 
 
+#python scripts/run_optimization.py --run iris_001 --model random_forest --search-space configs/search_spaces/random_forest.json
+
+
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description="Optimise les hyperparamètres d'un modèle par Tree-structured "
