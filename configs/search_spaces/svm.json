@@ -1,0 +1,5 @@
+{
+  "C":      {"type": "float", "low": 0.01, "high": 100.0, "log": true},
+  "gamma":  {"type": "float", "low": 0.0001, "high": 10.0, "log": true},
+  "kernel": {"type": "categorical", "choices": ["rbf", "linear", "poly"]}
+}
