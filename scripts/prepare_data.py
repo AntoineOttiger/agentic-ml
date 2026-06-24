@@ -1,4 +1,4 @@
-"""Entry point: split the Iris dataset into train/eval/test partitions."""
+"""Entry point: split the Iris dataset into train/val/test partitions."""
 import argparse
 import sys
 from pathlib import Path
@@ -6,7 +6,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 from agentic_ml.config import (
-    DEFAULT_EVAL_SIZE,
+    DEFAULT_VAL_SIZE,
     DEFAULT_MODE,
     DEFAULT_RANDOM_SEED,
     DEFAULT_TEST_SIZE,
@@ -16,13 +16,13 @@ from agentic_ml.data.prepare_data import DataSplitter
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(
-        description="Split the Iris dataset into stratified train/eval/test partitions."
+        description="Split the Iris dataset into stratified train/val/test partitions."
     )
     p.add_argument(
         "--mode",
         choices=["2way", "3way"],
         default=DEFAULT_MODE,
-        help="'2way' (train+test) or '3way' (train+eval+test). Default: %(default)s",
+        help="'2way' (train+test) or '3way' (train+val+test). Default: %(default)s",
     )
     p.add_argument(
         "--test-size",
@@ -31,10 +31,10 @@ def parse_args() -> argparse.Namespace:
         help="Fraction of total data reserved for test. Default: %(default)s",
     )
     p.add_argument(
-        "--eval-size",
+        "--val-size",
         type=float,
-        default=DEFAULT_EVAL_SIZE,
-        help="Fraction of total data reserved for eval (3way only). Default: %(default)s",
+        default=DEFAULT_VAL_SIZE,
+        help="Fraction of total data reserved for val (3way only). Default: %(default)s",
     )
     p.add_argument(
         "--seed",
@@ -50,7 +50,7 @@ def main() -> None:
     splitter = DataSplitter(
         mode=args.mode,
         test_size=args.test_size,
-        eval_size=args.eval_size,
+        val_size=args.val_size,
         random_seed=args.seed,
     )
     run_folder = splitter.split_and_save()
