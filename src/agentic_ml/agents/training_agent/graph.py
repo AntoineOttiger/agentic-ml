@@ -69,7 +69,7 @@ def run_agent(
     """Exécute la boucle agentique de bout en bout et renvoie l'état final.
 
     Args:
-        prepared_run: identifiant d'un run de `data/01_prepared` (défaut : le plus récent).
+        prepared_run: identifiant d'un run de `data/02_prepared` (défaut : le plus récent).
         stop_mode: "convergence" (arrêt déterministe) ou "agent" (le LLM décide,
             `max_runs` restant le seul garde-fou dur).
         results_dir: dossier de persistance (défaut : `config.RESULTS_DIR`).

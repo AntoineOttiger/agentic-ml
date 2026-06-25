@@ -16,7 +16,7 @@ from agentic_ml.training.dataset import resolve_run_dir
 
 
 def latest_prepared_run() -> str:
-    """Renvoie l'identifiant du run le plus récent de `data/01_prepared/`.
+    """Renvoie l'identifiant du run le plus récent de `data/02_prepared/`.
 
     S'appuie sur la convention de nommage de `DataSplitter` : `<dataset>_NNN`,
     le plus grand suffixe numérique étant le plus récent.

@@ -17,7 +17,7 @@ from agentic_ml.config import (
     DEFAULT_RANDOM_SEED,
     DEFAULT_TARGET_F1,
 )
-from agentic_ml.agent import run_agent
+from agentic_ml.agents.training_agent import run_agent
 
 
 def parse_args() -> argparse.Namespace:

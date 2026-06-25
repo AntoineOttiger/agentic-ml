@@ -5,7 +5,7 @@ Automatisation de la recherche de modèle ML et d'hyperparamètres via un agent 
 ### Structure
 
 - `data/00_raw/` → dataset Iris (CSV)
-- `data/01_prepared/` → splits versionnés (`001/`, `002/`, …) — chaque run contient `train.csv`, `val.csv`, `test.csv`, `metadata.json`
+- `data/02_prepared/` → splits versionnés (`001/`, `002/`, …) — chaque run contient `train.csv`, `val.csv`, `test.csv`, `metadata.json`
 - `notebooks/` → exploration
 - `scripts/prepare_data.py` → CLI pour `DataSplitter` (aucune logique métier)
 - `src/agentic_ml/data/prepare_data.py` → `DataSplitter` : split stratifié 2way ou 3way
