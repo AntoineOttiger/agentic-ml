@@ -11,7 +11,7 @@ from agentic_ml.config import (
     DEFAULT_RANDOM_SEED,
     DEFAULT_TEST_SIZE,
 )
-from agentic_ml.data.prepare_data import DataSplitter
+from agentic_ml.data_manager.prepare_data import DataSplitter
 
 
 def parse_args() -> argparse.Namespace:
