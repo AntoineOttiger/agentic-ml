@@ -17,6 +17,7 @@ Automatisation de la recherche de modèle ML et d'hyperparamètres via un agent 
 - `src/agentic_ml/agent` → module de gestion de l'agent
 - `src/agentic_ml/config.py` → chemins et constantes centralisés
 - `tests/` → vide (agent non encore implémenté)
+- `results/agent_runs` → resulat
 
 ### Conventions
 
