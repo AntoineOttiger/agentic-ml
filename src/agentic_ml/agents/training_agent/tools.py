@@ -17,7 +17,7 @@ from agentic_ml.training.models import available_models, get_model_spec
 from agentic_ml.training.optimizer import HyperparameterOptimizer
 from agentic_ml.training.search_space import validate_search_space
 
-from agentic_ml.agent.profile import build_dataset_profile
+from agentic_ml.agents.training_agent.profile import build_dataset_profile
 
 
 def get_dataset_profile(run: str | Path) -> dict[str, Any]:

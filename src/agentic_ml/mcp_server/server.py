@@ -5,7 +5,7 @@ from typing import Any
 
 from mcp.server.fastmcp import FastMCP
 
-from agentic_ml.agent.tools import get_dataset_profile, get_model_schema, launch_ml_pipeline
+from agentic_ml.agents.training_agent.tools import get_dataset_profile, get_model_schema, launch_ml_pipeline
 from agentic_ml.config import DEFAULT_N_TRIALS, DEFAULT_RANDOM_SEED
 
 mcp = FastMCP("agentic-ml-tools")

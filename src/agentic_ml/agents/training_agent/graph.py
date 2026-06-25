@@ -19,16 +19,16 @@ from agentic_ml.config import (
     DEFAULT_TARGET_F1,
 )
 
-from agentic_ml.agent.nodes import (
+from agentic_ml.agents.training_agent.nodes import (
     evaluate_stop,
     make_llm,
     propose_experiment,
     route_after_eval,
     run_pipeline,
 )
-from agentic_ml.agent.profile import latest_prepared_run
-from agentic_ml.agent.results import persist_results
-from agentic_ml.agent.state import AgentState
+from agentic_ml.agents.training_agent.profile import latest_prepared_run
+from agentic_ml.agents.training_agent.results import persist_results
+from agentic_ml.agents.training_agent.state import AgentState
 from agentic_ml.mcp_server.client import MCPToolClient
 
 

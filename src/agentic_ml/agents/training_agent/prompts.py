@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING
 
 from agentic_ml.training.models import available_models
 
-from agentic_ml.agent.state import AgentState
+from agentic_ml.agents.training_agent.state import AgentState
 
 if TYPE_CHECKING:
     from agentic_ml.mcp_server.client import MCPToolClient

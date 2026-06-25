@@ -13,19 +13,19 @@ from langchain_mistralai import ChatMistralAI
 
 from agentic_ml.config import AGENT_MODEL
 
-from agentic_ml.agent.prompts import (
+from agentic_ml.agents.training_agent.prompts import (
     STOP_SYSTEM_PROMPT,
     SYSTEM_PROMPT,
     build_context,
     build_stop_context,
 )
-from agentic_ml.agent.schema import Experiment, StopDecision, to_search_space
-from agentic_ml.agent.state import AgentState, Trial
+from agentic_ml.agents.training_agent.schema import Experiment, StopDecision, to_search_space
+from agentic_ml.agents.training_agent.state import AgentState, Trial
 
 if TYPE_CHECKING:
     from agentic_ml.mcp_server.client import MCPToolClient
 
-logger = logging.getLogger("agentic_ml.agent")
+logger = logging.getLogger("agentic_ml.agents.training_agent")
 
 
 def make_llm(model: str = AGENT_MODEL, *, temperature: float = 0.4) -> ChatMistralAI:

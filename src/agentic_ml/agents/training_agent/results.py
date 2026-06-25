@@ -21,9 +21,9 @@ from agentic_ml.config import DEFAULT_RANDOM_SEED, RESULTS_DIR
 from agentic_ml.training.dataset import load_prepared_run
 from agentic_ml.training.models import build_estimator
 
-from agentic_ml.agent.state import AgentState
+from agentic_ml.agents.training_agent.state import AgentState
 
-logger = logging.getLogger("agentic_ml.agent")
+logger = logging.getLogger("agentic_ml.agents.training_agent")
 
 
 def _write_json(path: Path, payload) -> None:
