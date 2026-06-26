@@ -4,12 +4,12 @@ PROJECT_ROOT  = Path(__file__).resolve().parents[2]
 RAW_DATA_DIR  = PROJECT_ROOT / "data" / "00_raw"
 PREPROC_DATA_DIR = PROJECT_ROOT / "data" / "01_preproc"
 PREP_DATA_DIR = PROJECT_ROOT / "data" / "02_prepared"
-DEFAULT_RAW_FILE = RAW_DATA_DIR / "Iris.csv"
+DEFAULT_RAW_FILE = RAW_DATA_DIR / "creditcard.csv"
 
 # Résultats des runs d'agent (trial_log, summary, best model)
 RESULTS_DIR   = PROJECT_ROOT / "results" / "agent_runs"
 
-TARGET_COL = "Species"
+TARGET_COL = "Class"
 DROP_COLS  = ["Id"]
 
 DEFAULT_MODE        = "3way"

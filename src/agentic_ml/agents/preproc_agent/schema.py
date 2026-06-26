@@ -8,16 +8,16 @@ from __future__ import annotations
 
 from typing import Literal, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class ColumnReport(BaseModel):
     """Diagnostic d'une colonne."""
 
     dtype: str = Field(description="Type de données (numérique, catégorielle, datetime, texte).")
-    null_pct: float = Field(description="Pourcentage de valeurs manquantes.")
+    null_pct: float = Field(default=0.0, description="Pourcentage de valeurs manquantes.")
     skewness: Optional[float] = Field(default=None, description="Asymétrie (numériques).")
-    n_unique: int = Field(description="Cardinalité (nombre de valeurs distinctes).")
+    n_unique: int = Field(default=0, description="Cardinalité (nombre de valeurs distinctes).")
     has_outliers: bool = Field(default=False, description="Présence d'outliers (IQR).")
     issues: list[str] = Field(
         default_factory=list,
@@ -38,6 +38,19 @@ class RecommendedAction(BaseModel):
         default_factory=list, description="Colonnes concernées par l'action."
     )
     reason: str = Field(description="Justification courte de la recommandation.")
+
+    @field_validator("columns", mode="before")
+    @classmethod
+    def flatten_columns(cls, v: object) -> list[str]:
+        if not isinstance(v, list):
+            return v
+        result: list[str] = []
+        for item in v:
+            if isinstance(item, list):
+                result.extend(str(x) for x in item)
+            else:
+                result.append(item)
+        return result
 
 
 class AnalysisReport(BaseModel):
