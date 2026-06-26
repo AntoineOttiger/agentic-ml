@@ -1,16 +1,16 @@
 # Graph Report - agentic-ml  (2026-06-26)
 
 ## Corpus Check
-- 41 files · ~10,663 words
+- 42 files · ~11,238 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 289 nodes · 463 edges · 22 communities (16 shown, 6 thin omitted)
+- 299 nodes · 472 edges · 22 communities (16 shown, 6 thin omitted)
 - Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.79)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1c5fadd5`
+- Built from commit: `be66a64a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -80,8 +80,8 @@ Cohesion: 0.33
 Nodes (5): agentic-ml, Conventions, graphify, Structure, État du projet
 
 ### Community 4 - "Community 4"
-Cohesion: 0.11
-Nodes (32): Any, ChatMistralAI, _action_signature(), agent_analyse(), agent_feature_engineering(), agent_preprocessing(), _apply_action(), make_llm() (+24 more)
+Cohesion: 0.09
+Nodes (40): Any, ChatMistralAI, _action_signature(), agent_analyse(), agent_feature_engineering(), agent_preprocessing(), _apply_action(), Nœuds LangGraph du système preproc : Analyse, Preprocessing, Feature Engineering (+32 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.12
@@ -104,15 +104,15 @@ Cohesion: 0.13
 Nodes (17): DataSplitter, DataFrame, Path, _next_run_folder(), persist_results(), Persistance d'une run de preprocessing dans `data/01_preproc/<dataset>_NNN/`.  É, Renvoie le prochain dossier `<dataset>_NNN` disponible., Écrit les artefacts de la run et renvoie le dossier créé. (+9 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.25
-Nodes (10): _column_profile(), _correlations(), _iqr_outliers(), profile_dataframe(), Profilage d'un DataFrame en statistiques agrégées (sans données brutes).  L'Agen, Construit le profil statistique complet du DataFrame.      Args:         df: Dat, Profil d'une colonne : type, nulls, cardinalité, distribution, issues., Détection d'outliers par la méthode IQR. Renvoie ``(présence, nombre)``. (+2 more)
+Cohesion: 0.20
+Nodes (9): Ce que tu dois faire quand ce skill est invoqué, /eda, Syntaxe, Étape 1 — Parser les arguments, Étape 2 — Inspecter le dataset, Étape 3 — Calculer le nom du notebook de sortie, Étape 4 — Lire le template, Étape 5 — Générer le notebook (+1 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.12
-Nodes (14): BaseCallbackHandler, LLMResult, make_llm(), Instancie le client Mistral avec rate limiting (clé lue dans MISTRAL_API_KEY)., get_rate_limiter(), MistralRateLimitCallback, MistralRateLimiter, Rate limiter pour l'API Mistral (thread-safe).  Fenêtres glissantes séparées : (+6 more)
+Cohesion: 0.11
+Nodes (16): BaseCallbackHandler, LLMResult, make_llm(), Instancie le client Mistral avec rate limiting (clé lue dans MISTRAL_API_KEY)., make_llm(), Instancie le client Mistral avec rate limiting (clé lue dans MISTRAL_API_KEY)., get_rate_limiter(), MistralRateLimitCallback (+8 more)
 
 ## Knowledge Gaps
-- **4 isolated node(s):** `Structure`, `Conventions`, `État du projet`, `graphify`
+- **11 isolated node(s):** `Syntaxe`, `Étape 1 — Parser les arguments`, `Étape 2 — Inspecter le dataset`, `Étape 3 — Calculer le nom du notebook de sortie`, `Étape 4 — Lire le template` (+6 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -120,11 +120,11 @@ Nodes (14): BaseCallbackHandler, LLMResult, make_llm(), Instancie le client Mist
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `to_search_space()` connect `Community 8` to `Community 0`, `Community 4`?**
-  _High betweenness centrality (0.125) - this node is a cross-community bridge._
-- **Why does `build_estimator()` connect `Community 1` to `Community 0`, `Community 4`, `Community 6`?**
   _High betweenness centrality (0.117) - this node is a cross-community bridge._
-- **What connects `Entry point: run the preprocessing / feature-engineering agent system.`, `Assemblage du StateGraph et point d'entrée `run_preproc_agent`.  Flux : analyse`, `Construit et compile le graphe de la boucle de preprocessing.` to the rest of the system?**
-  _112 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `build_estimator()` connect `Community 1` to `Community 0`, `Community 4`, `Community 6`?**
+  _High betweenness centrality (0.110) - this node is a cross-community bridge._
+- **What connects `Syntaxe`, `Étape 1 — Parser les arguments`, `Étape 2 — Inspecter le dataset` to the rest of the system?**
+  _119 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.11375661375661375 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
@@ -132,4 +132,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.125 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.11092436974789915 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08562367864693446 - nodes in this community are weakly interconnected._

@@ -4,14 +4,114 @@
   "graph": {},
   "nodes": [
     {
+      "label": "SKILL.md",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "eda_skill",
+      "community": 10,
+      "norm_label": "skill.md"
+    },
+    {
+      "label": "/eda",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "eda_skill_eda",
+      "community": 10,
+      "norm_label": "/eda"
+    },
+    {
+      "label": "Syntaxe",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "eda_skill_syntaxe",
+      "community": 10,
+      "norm_label": "syntaxe"
+    },
+    {
+      "label": "Ce que tu dois faire quand ce skill est invoqu\u00e9",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "eda_skill_ce_que_tu_dois_faire_quand_ce_skill_est_invoqu\u00e9",
+      "community": 10,
+      "norm_label": "ce que tu dois faire quand ce skill est invoque"
+    },
+    {
+      "label": "\u00c9tape 1 \u2014 Parser les arguments",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "eda_skill_\u00e9tape_1_parser_les_arguments",
+      "community": 10,
+      "norm_label": "etape 1 \u2014 parser les arguments"
+    },
+    {
+      "label": "\u00c9tape 2 \u2014 Inspecter le dataset",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "eda_skill_\u00e9tape_2_inspecter_le_dataset",
+      "community": 10,
+      "norm_label": "etape 2 \u2014 inspecter le dataset"
+    },
+    {
+      "label": "\u00c9tape 3 \u2014 Calculer le nom du notebook de sortie",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "eda_skill_\u00e9tape_3_calculer_le_nom_du_notebook_de_sortie",
+      "community": 10,
+      "norm_label": "etape 3 \u2014 calculer le nom du notebook de sortie"
+    },
+    {
+      "label": "\u00c9tape 4 \u2014 Lire le template",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "eda_skill_\u00e9tape_4_lire_le_template",
+      "community": 10,
+      "norm_label": "etape 4 \u2014 lire le template"
+    },
+    {
+      "label": "\u00c9tape 5 \u2014 G\u00e9n\u00e9rer le notebook",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "eda_skill_\u00e9tape_5_g\u00e9n\u00e9rer_le_notebook",
+      "community": 10,
+      "norm_label": "etape 5 \u2014 generer le notebook"
+    },
+    {
+      "label": "\u00c9tape 6 \u2014 Confirmer",
+      "file_type": "document",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "eda_skill_\u00e9tape_6_confirmer",
+      "community": 10,
+      "norm_label": "etape 6 \u2014 confirmer"
+    },
+    {
       "label": "run_preproc_agent.py",
       "file_type": "code",
       "source_file": "scripts/run_preproc_agent.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "scripts_run_preproc_agent",
       "community": 5,
-      "norm_label": "run_preproc_agent.py"
+      "norm_label": "run_preproc_agent.py",
+      "id": "scripts_run_preproc_agent"
     },
     {
       "label": "parse_args()",
@@ -19,9 +119,9 @@
       "source_file": "scripts/run_preproc_agent.py",
       "source_location": "L21",
       "_origin": "ast",
-      "id": "scripts_run_preproc_agent_parse_args",
       "community": 5,
-      "norm_label": "parse_args()"
+      "norm_label": "parse_args()",
+      "id": "scripts_run_preproc_agent_parse_args"
     },
     {
       "label": "Namespace",
@@ -29,9 +129,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "namespace",
       "community": 5,
-      "norm_label": "namespace"
+      "norm_label": "namespace",
+      "id": "namespace"
     },
     {
       "label": "main()",
@@ -39,9 +139,9 @@
       "source_file": "scripts/run_preproc_agent.py",
       "source_location": "L49",
       "_origin": "ast",
-      "id": "scripts_run_preproc_agent_main",
       "community": 5,
-      "norm_label": "main()"
+      "norm_label": "main()",
+      "id": "scripts_run_preproc_agent_main"
     },
     {
       "label": "Entry point: run the preprocessing / feature-engineering agent system.",
@@ -49,9 +149,9 @@
       "source_file": "scripts/run_preproc_agent.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "scripts_run_preproc_agent_rationale_1",
       "community": 5,
-      "norm_label": "entry point: run the preprocessing / feature-engineering agent system."
+      "norm_label": "entry point: run the preprocessing / feature-engineering agent system.",
+      "id": "scripts_run_preproc_agent_rationale_1"
     },
     {
       "label": "graph.py",
@@ -59,9 +159,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "preproc_agent_graph",
       "community": 5,
-      "norm_label": "graph.py"
+      "norm_label": "graph.py",
+      "id": "preproc_agent_graph"
     },
     {
       "label": "build_preproc_graph()",
@@ -69,9 +169,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L35",
       "_origin": "ast",
-      "id": "preproc_agent_graph_build_preproc_graph",
       "community": 5,
-      "norm_label": "build_preproc_graph()"
+      "norm_label": "build_preproc_graph()",
+      "id": "preproc_agent_graph_build_preproc_graph"
     },
     {
       "label": "ChatMistralAI",
@@ -79,9 +179,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "chatmistralai",
       "community": 4,
-      "norm_label": "chatmistralai"
+      "norm_label": "chatmistralai",
+      "id": "chatmistralai"
     },
     {
       "label": "run_preproc_agent()",
@@ -89,9 +189,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "preproc_agent_graph_run_preproc_agent",
       "community": 5,
-      "norm_label": "run_preproc_agent()"
+      "norm_label": "run_preproc_agent()",
+      "id": "preproc_agent_graph_run_preproc_agent"
     },
     {
       "label": "Path",
@@ -99,9 +199,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "path",
       "community": 9,
-      "norm_label": "path"
+      "norm_label": "path",
+      "id": "path"
     },
     {
       "label": "MLPipelineState",
@@ -109,9 +209,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "mlpipelinestate",
       "community": 5,
-      "norm_label": "mlpipelinestate"
+      "norm_label": "mlpipelinestate",
+      "id": "mlpipelinestate"
     },
     {
       "label": "Assemblage du StateGraph et point d'entr\u00e9e `run_preproc_agent`.  Flux : analyse",
@@ -119,9 +219,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "preproc_agent_graph_rationale_1",
       "community": 5,
-      "norm_label": "assemblage du stategraph et point d'entree `run_preproc_agent`.  flux : analyse"
+      "norm_label": "assemblage du stategraph et point d'entree `run_preproc_agent`.  flux : analyse",
+      "id": "preproc_agent_graph_rationale_1"
     },
     {
       "label": "Construit et compile le graphe de la boucle de preprocessing.",
@@ -129,9 +229,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L36",
       "_origin": "ast",
-      "id": "preproc_agent_graph_rationale_36",
       "community": 5,
-      "norm_label": "construit et compile le graphe de la boucle de preprocessing."
+      "norm_label": "construit et compile le graphe de la boucle de preprocessing.",
+      "id": "preproc_agent_graph_rationale_36"
     },
     {
       "label": "Ex\u00e9cute la boucle de preprocessing de bout en bout et renvoie l'\u00e9tat final.",
@@ -139,9 +239,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L68",
       "_origin": "ast",
-      "id": "preproc_agent_graph_rationale_68",
       "community": 5,
-      "norm_label": "execute la boucle de preprocessing de bout en bout et renvoie l'etat final."
+      "norm_label": "execute la boucle de preprocessing de bout en bout et renvoie l'etat final.",
+      "id": "preproc_agent_graph_rationale_68"
     },
     {
       "label": "config.py",
@@ -149,9 +249,9 @@
       "source_file": "src/agentic_ml/config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "agentic_ml_config",
       "community": 5,
-      "norm_label": "config.py"
+      "norm_label": "config.py",
+      "id": "agentic_ml_config"
     },
     {
       "label": "CLAUDE.md",
@@ -1059,7 +1159,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/nodes.py",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 4,
+      "community": 20,
       "norm_label": "make_llm()",
       "id": "preproc_agent_nodes_make_llm"
     },
@@ -1139,7 +1239,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/nodes.py",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 4,
+      "community": 20,
       "norm_label": "instancie le client mistral avec rate limiting (cle lue dans mistral_api_key).",
       "id": "preproc_agent_nodes_rationale_34"
     },
@@ -1209,7 +1309,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "profiling.py",
       "id": "preproc_agent_profiling"
     },
@@ -1219,7 +1319,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "_column_profile()",
       "id": "preproc_agent_profiling_column_profile"
     },
@@ -1229,7 +1329,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "series",
       "id": "series"
     },
@@ -1239,7 +1339,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "_iqr_outliers()",
       "id": "preproc_agent_profiling_iqr_outliers"
     },
@@ -1249,7 +1349,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L90",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "_correlations()",
       "id": "preproc_agent_profiling_correlations"
     },
@@ -1259,7 +1359,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L121",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "profile_dataframe()",
       "id": "preproc_agent_profiling_profile_dataframe"
     },
@@ -1269,7 +1369,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "profilage d'un dataframe en statistiques agregees (sans donnees brutes).  l'agen",
       "id": "preproc_agent_profiling_rationale_1"
     },
@@ -1279,7 +1379,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "profil d'une colonne : type, nulls, cardinalite, distribution, issues.",
       "id": "preproc_agent_profiling_rationale_28"
     },
@@ -1289,7 +1389,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L79",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "detection d'outliers par la methode iqr. renvoie ``(presence, nombre)``.",
       "id": "preproc_agent_profiling_rationale_79"
     },
@@ -1299,7 +1399,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L91",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "correlations numeriques : paires fortement correlees + correlation a la target.",
       "id": "preproc_agent_profiling_rationale_91"
     },
@@ -1309,7 +1409,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L122",
       "_origin": "ast",
-      "community": 10,
+      "community": 4,
       "norm_label": "construit le profil statistique complet du dataframe.      args:         df: dat",
       "id": "preproc_agent_profiling_rationale_122"
     },
@@ -2896,6 +2996,96 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "eda_skill",
+      "target": "eda_skill_eda",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "eda_skill_eda",
+      "target": "eda_skill_ce_que_tu_dois_faire_quand_ce_skill_est_invoqu\u00e9",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "eda_skill_eda",
+      "target": "eda_skill_syntaxe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "eda_skill_ce_que_tu_dois_faire_quand_ce_skill_est_invoqu\u00e9",
+      "target": "eda_skill_\u00e9tape_1_parser_les_arguments",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "eda_skill_ce_que_tu_dois_faire_quand_ce_skill_est_invoqu\u00e9",
+      "target": "eda_skill_\u00e9tape_2_inspecter_le_dataset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "eda_skill_ce_que_tu_dois_faire_quand_ce_skill_est_invoqu\u00e9",
+      "target": "eda_skill_\u00e9tape_3_calculer_le_nom_du_notebook_de_sortie",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "eda_skill_ce_que_tu_dois_faire_quand_ce_skill_est_invoqu\u00e9",
+      "target": "eda_skill_\u00e9tape_4_lire_le_template",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "eda_skill_ce_que_tu_dois_faire_quand_ce_skill_est_invoqu\u00e9",
+      "target": "eda_skill_\u00e9tape_5_g\u00e9n\u00e9rer_le_notebook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/skills/eda/SKILL.md",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "eda_skill_ce_que_tu_dois_faire_quand_ce_skill_est_invoqu\u00e9",
+      "target": "eda_skill_\u00e9tape_6_confirmer",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -3202,9 +3392,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "preproc_agent_graph_run_preproc_agent",
-      "target": "mlpipelinestate",
-      "confidence_score": 1.0
+      "target": "mlpipelinestate"
     },
     {
       "relation": "references",
@@ -7750,5 +7940,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1c5fadd59ba75eeb9e44694a78b576eb25eed640"
+  "built_at_commit": "be66a64a04499fbd296ec2a1f7662d8b99c28570"
 }

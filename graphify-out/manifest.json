@@ -208,5 +208,10 @@
     "mtime": 1782463424.5175238,
     "ast_hash": "1f8da4ec63aa2e7abce002e6d741a21d",
     "semantic_hash": ""
+  },
+  ".claude/skills/eda/SKILL.md": {
+    "mtime": 1782477288.7424586,
+    "ast_hash": "360d925e9920e5249d6fbdf6e3b572aa",
+    "semantic_hash": ""
   }
 }

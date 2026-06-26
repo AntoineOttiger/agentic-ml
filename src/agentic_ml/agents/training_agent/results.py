@@ -1,6 +1,6 @@
 """Persistance d'une run d'agent : trial_log, résumé et best model.
 
-Écrit dans `results/agent_runs/<timestamp>/` :
+Écrit dans `results/agent_runs/<prepared_run>/<timestamp>/` :
 - `trial_log.json` : l'historique complet des essais (train_f1/eval_f1 par run) ;
 - `summary.json`   : meilleur essai + configuration de la run + motif d'arrêt ;
 - `best_model.joblib` : le best model réentraîné sur le train (avec son LabelEncoder).
@@ -57,7 +57,8 @@ def _save_best_model(state: AgentState, out_dir: Path) -> None:
 
 def persist_results(state: AgentState, *, results_dir: Path = RESULTS_DIR) -> Path:
     """Écrit les artefacts de la run et renvoie le dossier créé."""
-    out_dir = results_dir / datetime.now().strftime("%Y%m%d_%H%M%S")
+    prepared_run = state.get("prepared_run") or "unknown"
+    out_dir = results_dir / prepared_run / datetime.now().strftime("%Y%m%d_%H%M%S")
     out_dir.mkdir(parents=True, exist_ok=True)
 
     _write_json(out_dir / "trial_log.json", state.get("trial_log", []))
