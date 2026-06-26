@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 288 nodes · 462 edges · 22 communities (16 shown, 6 thin omitted)
+- 289 nodes · 463 edges · 22 communities (16 shown, 6 thin omitted)
 - Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.79)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `cec9246b`
+- Built from commit: `1c5fadd5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -38,10 +38,10 @@
 1. `MLPipelineState` - 14 edges
 2. `AgentState` - 14 edges
 3. `MCPToolClient` - 13 edges
-4. `HyperparameterOptimizer` - 9 edges
-5. `_apply_action()` - 9 edges
-6. `propose_experiment()` - 8 edges
-7. `run_preproc_agent()` - 8 edges
+4. `run_preproc_agent()` - 9 edges
+5. `HyperparameterOptimizer` - 9 edges
+6. `_apply_action()` - 9 edges
+7. `propose_experiment()` - 8 edges
 8. `agent_preprocessing()` - 8 edges
 9. `agent_feature_engineering()` - 8 edges
 10. `run_agent()` - 8 edges
@@ -84,8 +84,8 @@ Cohesion: 0.11
 Nodes (32): Any, ChatMistralAI, _action_signature(), agent_analyse(), agent_feature_engineering(), agent_preprocessing(), _apply_action(), make_llm() (+24 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.18
-Nodes (10): Namespace, main(), parse_args(), Entry point: lance une optimisation d'hyperparamètres (Optuna TPE) sur un run pr, main(), parse_args(), Entry point: run the preprocessing / feature-engineering agent system., main() (+2 more)
+Cohesion: 0.12
+Nodes (16): MLPipelineState, Namespace, build_preproc_graph(), Assemblage du StateGraph et point d'entrée `run_preproc_agent`.  Flux : analyse, Construit et compile le graphe de la boucle de preprocessing., Exécute la boucle de preprocessing de bout en bout et renvoie l'état final., run_preproc_agent(), main() (+8 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.08
@@ -100,8 +100,8 @@ Cohesion: 0.12
 Nodes (19): BaseModel, AnalysisReport, ColumnReport, GeneratedCode, Modèles Pydantic pour les sorties structurées des agents preproc.  - `AnalysisRe, Diagnostic d'une colonne., Action recommandée par l'Agent Analyse., Rapport structuré de l'Agent Analyse (structure JSON de la spec). (+11 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.10
-Nodes (22): DataSplitter, DataFrame, Path, build_preproc_graph(), Assemblage du StateGraph et point d'entrée `run_preproc_agent`.  Flux : analyse, Construit et compile le graphe de la boucle de preprocessing., Exécute la boucle de preprocessing de bout en bout et renvoie l'état final., run_preproc_agent() (+14 more)
+Cohesion: 0.13
+Nodes (17): DataSplitter, DataFrame, Path, _next_run_folder(), persist_results(), Persistance d'une run de preprocessing dans `data/01_preproc/<dataset>_NNN/`.  É, Renvoie le prochain dossier `<dataset>_NNN` disponible., Écrit les artefacts de la run et renvoie le dossier créé. (+9 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.25
@@ -120,10 +120,10 @@ Nodes (14): BaseCallbackHandler, LLMResult, make_llm(), Instancie le client Mist
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `to_search_space()` connect `Community 8` to `Community 0`, `Community 4`?**
-  _High betweenness centrality (0.126) - this node is a cross-community bridge._
+  _High betweenness centrality (0.125) - this node is a cross-community bridge._
 - **Why does `build_estimator()` connect `Community 1` to `Community 0`, `Community 4`, `Community 6`?**
-  _High betweenness centrality (0.118) - this node is a cross-community bridge._
-- **What connects `Structure`, `Conventions`, `État du projet` to the rest of the system?**
+  _High betweenness centrality (0.117) - this node is a cross-community bridge._
+- **What connects `Entry point: run the preprocessing / feature-engineering agent system.`, `Assemblage du StateGraph et point d'entrée `run_preproc_agent`.  Flux : analyse`, `Construit et compile le graphe de la boucle de preprocessing.` to the rest of the system?**
   _112 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.11375661375661375 - nodes in this community are weakly interconnected._
