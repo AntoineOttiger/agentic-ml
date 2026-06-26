@@ -31,20 +31,31 @@ MIN_N_TRIALS       = 1   # plancher : assez d'essais pour que TPE soit pertinent
 MAX_N_TRIALS       = 50  # plafond dur : coût Optuna / rate-limit
 DEFAULT_F1_AVERAGE = "macro"  # Iris multiclasse équilibré
 
-# Agent de recherche (LangGraph + Mistral)
-AGENT_MODEL           = "mistral-small-2603"
+# Provider LLM — unique point de configuration pour tous les agents
+AGENT_PROVIDER = "mistral"  # "mistral" | "anthropic"
+
+MISTRAL_AGENT_MODEL   = "mistral-small-2603"
+ANTHROPIC_AGENT_MODEL = "claude-haiku-4-5-20251001"
+
+# Modèle actif dérivé du provider
+AGENT_MODEL        = MISTRAL_AGENT_MODEL if AGENT_PROVIDER == "mistral" else ANTHROPIC_AGENT_MODEL
+
 DEFAULT_MAX_RUNS      = 10      # budget : nombre max de runs de pipeline
 DEFAULT_TARGET_F1     = 0.98    # seuil cible d'arrêt sur eval_f1
 CONVERGENCE_EPSILON   = 1e-3    # amélioration mini d'eval_f1 considérée significative
 CONVERGENCE_PATIENCE  = 3       # K : fenêtre d'essais pour le critère de convergence
 DEFAULT_STOP_MODE     = "convergence"  # "convergence" (déterministe) | "agent" (LLM décide)
 
-# Agents preprocessing / feature engineering (LangGraph + Mistral) — système isolé
-PREPROC_AGENT_MODEL     = AGENT_MODEL  # même modèle Mistral que l'agent de recherche
+# Agents preprocessing / feature engineering — système isolé
+PREPROC_AGENT_MODEL     = AGENT_MODEL  # même modèle que l'agent de recherche
 DEFAULT_MAX_ITERATIONS  = 10           # garde-fou de la boucle de l'orchestrateur
 MAX_CODE_RETRIES        = 3            # tentatives de correction LLM sur erreur d'exécution
 MAX_CATEGORICAL_UNIQUES = 50           # cardinalité au-delà de laquelle on ne passe que le compte
 
-# Limites API Mistral
-MISTRAL_RPS = 1           # requêtes par seconde (free tier)
-MISTRAL_TPM = 49_000     # tokens par minute  (free tier, fenêtre 60 s)
+# Limites API Mistral (free tier)
+MISTRAL_RPS = 1
+MISTRAL_TPM = 49_000
+
+# Limites API Anthropic (tier 1)
+ANTHROPIC_RPM = 50
+ANTHROPIC_TPM = 40_000

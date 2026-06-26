@@ -7,11 +7,11 @@ from __future__ import annotations
 
 import logging
 
+from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_mistralai import ChatMistralAI
 
-from agentic_ml.config import AGENT_MODEL, MAX_N_TRIALS, MIN_N_TRIALS
-from agentic_ml.utils.rate_limiter import MistralRateLimitCallback, get_rate_limiter
+from agentic_ml.config import AGENT_MODEL, AGENT_PROVIDER, MAX_N_TRIALS, MIN_N_TRIALS
+from agentic_ml.utils.rate_limiter import RateLimitCallback, get_rate_limiter
 
 from agentic_ml.agents.training_agent.prompts import (
     STOP_SYSTEM_PROMPT,
@@ -27,13 +27,17 @@ from agentic_ml.agents.training_agent.tools import launch_ml_pipeline
 logger = logging.getLogger("agentic_ml.agents.training_agent")
 
 
-def make_llm(model: str = AGENT_MODEL, *, temperature: float = 0.4) -> ChatMistralAI:
-    """Instancie le client Mistral avec rate limiting (clé lue dans MISTRAL_API_KEY)."""
-    callback = MistralRateLimitCallback(get_rate_limiter())
-    return ChatMistralAI(model=model, temperature=temperature, callbacks=[callback])
+def make_llm(model: str = AGENT_MODEL, *, temperature: float = 0.4) -> BaseChatModel:
+    """Instancie le client LLM selon AGENT_PROVIDER avec rate limiting."""
+    callback = RateLimitCallback(get_rate_limiter())
+    if AGENT_PROVIDER == "anthropic":
+        from langchain_anthropic import ChatAnthropic
+        return ChatAnthropic(model=model, temperature=temperature, callbacks=[callback])
+    from langchain_mistralai import BaseChatModel
+    return BaseChatModel(model=model, temperature=temperature, callbacks=[callback])
 
 
-def propose_experiment(state: AgentState, llm: ChatMistralAI) -> dict:
+def propose_experiment(state: AgentState, llm: BaseChatModel) -> dict:
     """Formule une hypothèse et propose une configuration (model_type, search_space)."""
     structured = llm.with_structured_output(Experiment)
     messages = [
@@ -107,7 +111,7 @@ def run_pipeline(state: AgentState) -> dict:
     }
 
 
-def evaluate_stop(state: AgentState, llm: ChatMistralAI | None = None) -> dict:
+def evaluate_stop(state: AgentState, llm: BaseChatModel | None = None) -> dict:
     """Décide de continuer ou d'arrêter, selon le `stop_mode`.
 
     Le budget (`max_runs`) est un garde-fou dur appliqué dans les deux modes. En
@@ -152,7 +156,7 @@ def _evaluate_stop_convergence(state: AgentState) -> dict:
     return {"decision": "continue", "stop_reason": None}
 
 
-def _evaluate_stop_agent(state: AgentState, llm: ChatMistralAI | None) -> dict:
+def _evaluate_stop_agent(state: AgentState, llm: BaseChatModel | None) -> dict:
     """Délègue la décision d'arrêt au LLM (budget déjà borné en amont)."""
     if llm is None:
         raise ValueError("Le mode d'arrêt 'agent' requiert un LLM (llm=None).")

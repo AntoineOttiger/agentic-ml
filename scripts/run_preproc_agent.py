@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from dotenv import load_dotenv
 
 from agentic_ml.config import (
+    AGENT_PROVIDER,
     DEFAULT_MAX_ITERATIONS,
     PREPROC_AGENT_MODEL,
     DEFAULT_RAW_FILE,
@@ -41,7 +42,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--model",
         default=PREPROC_AGENT_MODEL,
-        help="Mistral model id. Default: %(default)s",
+        help="LLM model id. Default: %(default)s",
     )
     return p.parse_args()
 
@@ -51,8 +52,9 @@ def main() -> None:
 
     load_dotenv()
 
-    if not os.environ.get("MISTRAL_API_KEY"):
-        sys.exit("MISTRAL_API_KEY is not set — export it before running the agent.")
+    key_name = "ANTHROPIC_API_KEY" if AGENT_PROVIDER == "anthropic" else "MISTRAL_API_KEY"
+    if not os.environ.get(key_name):
+        sys.exit(f"{key_name} is not set — export it before running the agent.")
 
     logging.basicConfig(level=logging.INFO, format="%(message)s")
 

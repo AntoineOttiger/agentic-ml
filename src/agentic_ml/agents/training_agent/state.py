@@ -32,6 +32,7 @@ class AgentState(TypedDict, total=False):
     dataset_profile: dict[str, Any]
     objective: str
     prepared_run: str
+    agent_model: str
 
     # Budget
     max_runs: int

@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 
 from agentic_ml.config import (
     AGENT_MODEL,
+    AGENT_PROVIDER,
     DEFAULT_MAX_RUNS,
     DEFAULT_RANDOM_SEED,
     DEFAULT_TARGET_F1,
@@ -43,7 +44,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--model",
         default=AGENT_MODEL,
-        help="Mistral model id. Default: %(default)s",
+        help="LLM model id. Default: %(default)s",
     )
     p.add_argument(
         "--seed",
@@ -59,8 +60,9 @@ def main() -> None:
 
     load_dotenv()
 
-    if not os.environ.get("MISTRAL_API_KEY"):
-        sys.exit("MISTRAL_API_KEY is not set — export it before running the agent.")
+    key_name = "ANTHROPIC_API_KEY" if AGENT_PROVIDER == "anthropic" else "MISTRAL_API_KEY"
+    if not os.environ.get(key_name):
+        sys.exit(f"{key_name} is not set — export it before running the agent.")
 
     logging.basicConfig(level=logging.INFO, format="%(message)s")
 

@@ -5,8 +5,8 @@ from functools import partial
 from pathlib import Path
 from typing import Optional
 
+from langchain_core.language_models import BaseChatModel
 from langgraph.graph import END, START, StateGraph
-from langchain_mistralai import ChatMistralAI
 
 from agentic_ml.config import (
     AGENT_MODEL,
@@ -31,7 +31,7 @@ from agentic_ml.agents.training_agent.state import AgentState
 from agentic_ml.agents.training_agent.tools import get_dataset_profile
 
 
-def build_agent_graph(llm: ChatMistralAI):
+def build_agent_graph(llm: BaseChatModel):
     """Construit et compile le graphe de la boucle de recherche.
 
     Flux : propose_experiment → run_pipeline → evaluate_stop → (boucle | fin).
@@ -80,6 +80,7 @@ def run_agent(
         "dataset_profile": get_dataset_profile(run_id),
         "objective": "maximize eval_f1",
         "prepared_run": run_id,
+        "agent_model": model,
         "max_runs": max_runs,
         "runs_used": 0,
         "stop_mode": stop_mode,

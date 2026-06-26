@@ -11,8 +11,8 @@ from pathlib import Path
 from typing import Optional
 
 import pandas as pd
+from langchain_core.language_models import BaseChatModel
 from langgraph.graph import END, StateGraph
-from langchain_mistralai import ChatMistralAI
 
 from agentic_ml.agents.preproc_agent.nodes import (
     agent_analyse,
@@ -32,7 +32,7 @@ from agentic_ml.config import (
 )
 
 
-def build_preproc_graph(llm: ChatMistralAI):
+def build_preproc_graph(llm: BaseChatModel):
     """Construit et compile le graphe de la boucle de preprocessing."""
     graph = StateGraph(MLPipelineState)
 
@@ -89,6 +89,7 @@ def run_preproc_agent(
     initial_state: MLPipelineState = {
         "dataframe": df,
         "target_column": target_column,
+        "agent_model": model,
         "applied_transformations": [],
         "created_features": [],
         "analysis_report": {},

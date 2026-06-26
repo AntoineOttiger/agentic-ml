@@ -60,6 +60,7 @@ def persist_results(
         run_folder / "transformations.json",
         {
             "created_at": datetime.now().isoformat(timespec="seconds"),
+            "agent_model": state.get("agent_model"),
             "target_column": state.get("target_column"),
             "iteration_count": state.get("iteration_count", 0),
             "applied_transformations": state.get("applied_transformations", []),

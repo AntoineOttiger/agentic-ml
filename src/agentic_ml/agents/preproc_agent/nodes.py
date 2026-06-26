@@ -9,10 +9,10 @@ from __future__ import annotations
 import logging
 from typing import Any
 
+from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_mistralai import ChatMistralAI
 
-from agentic_ml.utils.rate_limiter import MistralRateLimitCallback, get_rate_limiter
+from agentic_ml.utils.rate_limiter import RateLimitCallback, get_rate_limiter
 from agentic_ml.agents.preproc_agent.prompts import (
     ANALYSIS_SYSTEM_PROMPT,
     FEATURE_ENGINEERING_SYSTEM_PROMPT,
@@ -25,15 +25,19 @@ from agentic_ml.agents.preproc_agent.prompts import (
 from agentic_ml.agents.preproc_agent.sandbox import execute_code
 from agentic_ml.agents.preproc_agent.schema import AnalysisReport, GeneratedCode
 from agentic_ml.agents.preproc_agent.state import MLPipelineState
-from agentic_ml.config import MAX_CODE_RETRIES, PREPROC_AGENT_MODEL
+from agentic_ml.config import AGENT_PROVIDER, MAX_CODE_RETRIES, PREPROC_AGENT_MODEL
 
 logger = logging.getLogger("agentic_ml.agents.preproc_agent")
 
 
-def make_llm(model: str = PREPROC_AGENT_MODEL, *, temperature: float = 0.2) -> ChatMistralAI:
-    """Instancie le client Mistral avec rate limiting (clé lue dans MISTRAL_API_KEY)."""
-    callback = MistralRateLimitCallback(get_rate_limiter())
-    return ChatMistralAI(model=model, temperature=temperature, callbacks=[callback])
+def make_llm(model: str = PREPROC_AGENT_MODEL, *, temperature: float = 0.2) -> BaseChatModel:
+    """Instancie le client LLM selon AGENT_PROVIDER avec rate limiting."""
+    callback = RateLimitCallback(get_rate_limiter())
+    if AGENT_PROVIDER == "anthropic":
+        from langchain_anthropic import ChatAnthropic
+        return ChatAnthropic(model=model, temperature=temperature, callbacks=[callback])
+    from langchain_mistralai import BaseChatModel
+    return BaseChatModel(model=model, temperature=temperature, callbacks=[callback])
 
 
 def _action_signature(action: dict[str, Any]) -> str:
@@ -42,7 +46,7 @@ def _action_signature(action: dict[str, Any]) -> str:
     return f"{action.get('action', '?')}({cols})"
 
 
-def agent_analyse(state: MLPipelineState, *, llm: ChatMistralAI) -> dict[str, Any]:
+def agent_analyse(state: MLPipelineState, *, llm: BaseChatModel) -> dict[str, Any]:
     """Profile les données, produit le rapport et décide du routage."""
     messages = [
         SystemMessage(content=ANALYSIS_SYSTEM_PROMPT),
@@ -95,7 +99,7 @@ def agent_analyse(state: MLPipelineState, *, llm: ChatMistralAI) -> dict[str, An
 def _apply_action(
     state: MLPipelineState,
     *,
-    llm: ChatMistralAI,
+    llm: BaseChatModel,
     system_prompt: str,
     context: str,
 ) -> tuple[Any, list[str], str, str | None]:
@@ -128,7 +132,7 @@ def _apply_action(
     return df, [], code, error
 
 
-def agent_preprocessing(state: MLPipelineState, *, llm: ChatMistralAI) -> dict[str, Any]:
+def agent_preprocessing(state: MLPipelineState, *, llm: BaseChatModel) -> dict[str, Any]:
     """Applique la première action de preprocessing en attente."""
     actions = [a for a in state.get("actions_to_apply", []) if a["type"] == "preprocessing"]
     if not actions:
@@ -156,7 +160,7 @@ def agent_preprocessing(state: MLPipelineState, *, llm: ChatMistralAI) -> dict[s
     }
 
 
-def agent_feature_engineering(state: MLPipelineState, *, llm: ChatMistralAI) -> dict[str, Any]:
+def agent_feature_engineering(state: MLPipelineState, *, llm: BaseChatModel) -> dict[str, Any]:
     """Applique la première action de feature engineering en attente."""
     actions = [
         a for a in state.get("actions_to_apply", []) if a["type"] == "feature_engineering"

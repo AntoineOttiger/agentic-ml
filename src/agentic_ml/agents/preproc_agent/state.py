@@ -21,6 +21,7 @@ class MLPipelineState(TypedDict, total=False):
     # Données
     dataframe: pd.DataFrame            # DataFrame courant (transformé en place)
     target_column: str                 # Nom de la colonne cible
+    agent_model: str                   # Modèle LLM utilisé (tracé dans les métadonnées)
 
     # Historique des transformations (anti-doublon)
     applied_transformations: list[str]  # ex: ["impute_median(SepalWidthCm)", "drop(Id)"]

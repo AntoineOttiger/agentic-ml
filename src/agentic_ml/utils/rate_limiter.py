@@ -1,12 +1,12 @@
-"""Rate limiter pour l'API Mistral (thread-safe).
+"""Rate limiter pour les APIs LLM (thread-safe).
 
 Fenêtres glissantes séparées :
   - requêtes : _REQ_WINDOW = 1 s  (RPS)
   - tokens   : _TOK_WINDOW = 60 s (TPM)
 
 Usage:
-    from agentic_ml.utils.rate_limiter import get_rate_limiter, MistralRateLimitCallback
-    callback = MistralRateLimitCallback(get_rate_limiter())
+    from agentic_ml.utils.rate_limiter import get_rate_limiter, RateLimitCallback
+    callback = RateLimitCallback(get_rate_limiter())
     llm = ChatMistralAI(..., callbacks=[callback])
 """
 from __future__ import annotations
@@ -20,7 +20,13 @@ from typing import Any
 from langchain_core.callbacks import BaseCallbackHandler
 from langchain_core.outputs import LLMResult
 
-from agentic_ml.config import MISTRAL_RPS, MISTRAL_TPM
+from agentic_ml.config import (
+    AGENT_PROVIDER,
+    ANTHROPIC_RPM,
+    ANTHROPIC_TPM,
+    MISTRAL_RPS,
+    MISTRAL_TPM,
+)
 
 logger = logging.getLogger("agentic_ml.rate_limiter")
 
@@ -28,14 +34,14 @@ _REQ_WINDOW = 1.0   # secondes — fenêtre glissante pour RPS
 _TOK_WINDOW = 60.0  # secondes — fenêtre glissante pour TPM
 
 
-class MistralRateLimiter:
+class RateLimiter:
     """Sliding-window rate limiter pour RPS et TPM.
 
     Thread-safe : le lock n'est tenu que pendant les opérations courtes sur les
     deques, jamais pendant un sleep.
     """
 
-    def __init__(self, rps: int = MISTRAL_RPS, tpm: int = MISTRAL_TPM) -> None:
+    def __init__(self, rps: int, tpm: int) -> None:
         self._rps = rps
         self._tpm = tpm
         self._lock = threading.Lock()
@@ -87,14 +93,14 @@ class MistralRateLimiter:
         return max(waits) if waits else 0.0
 
 
-class MistralRateLimitCallback(BaseCallbackHandler):
+class RateLimitCallback(BaseCallbackHandler):
     """Callback LangChain qui applique le rate limiting autour de chaque appel LLM.
 
     - on_llm_start → wait_if_needed()  (bloque avant la requête HTTP)
     - on_llm_end   → record_usage()   (enregistre les tokens après la réponse)
     """
 
-    def __init__(self, limiter: MistralRateLimiter) -> None:
+    def __init__(self, limiter: RateLimiter) -> None:
         super().__init__()
         self._limiter = limiter
 
@@ -114,20 +120,32 @@ class MistralRateLimitCallback(BaseCallbackHandler):
         logger.debug("rate limiter | tokens enregistrés : %d", tokens)
 
 
-_limiter_instance: MistralRateLimiter | None = None
+# Aliases pour compatibilité avec les imports existants
+MistralRateLimiter = RateLimiter
+MistralRateLimitCallback = RateLimitCallback
+
+
+_limiter_instance: RateLimiter | None = None
 _singleton_lock = threading.Lock()
 
 
-def get_rate_limiter() -> MistralRateLimiter:
-    """Retourne (ou crée) le singleton MistralRateLimiter partagé par tous les agents."""
+def get_rate_limiter() -> RateLimiter:
+    """Retourne (ou crée) le singleton RateLimiter partagé par tous les agents."""
     global _limiter_instance
     if _limiter_instance is None:
         with _singleton_lock:
             if _limiter_instance is None:
-                _limiter_instance = MistralRateLimiter()
+                if AGENT_PROVIDER == "anthropic":
+                    rps = max(1, ANTHROPIC_RPM // 60)
+                    tpm = ANTHROPIC_TPM
+                else:
+                    rps = MISTRAL_RPS
+                    tpm = MISTRAL_TPM
+                _limiter_instance = RateLimiter(rps=rps, tpm=tpm)
                 logger.info(
-                    "rate limiter initialisé — RPS=%d TPM=%d",
-                    MISTRAL_RPS,
-                    MISTRAL_TPM,
+                    "rate limiter initialisé — provider=%s RPS=%d TPM=%d",
+                    AGENT_PROVIDER,
+                    rps,
+                    tpm,
                 )
     return _limiter_instance
