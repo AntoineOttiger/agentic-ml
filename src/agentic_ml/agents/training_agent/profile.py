@@ -20,23 +20,24 @@ def latest_prepared_run() -> str:
 
     S'appuie sur la convention de nommage de `DataSplitter` :
     `<dataset>_<preproc_idx>_<prepared_idx>`. Le run le plus récent est celui
-    dont le tuple (preproc_idx, prepared_idx) est le plus grand.
+    dont le dossier a la date de modification la plus récente (st_mtime),
+    ce qui fonctionne correctement avec plusieurs datasets coexistants.
     """
-    candidates: list[tuple[tuple[int, int], str]] = []
+    candidates: list[Path] = []
     if PREP_DATA_DIR.is_dir():
         for p in PREP_DATA_DIR.iterdir():
             if not p.is_dir():
                 continue
             parts = p.name.rsplit("_", 2)
             if len(parts) == 3 and parts[1].isdigit() and parts[2].isdigit():
-                candidates.append(((int(parts[1]), int(parts[2])), p.name))
+                candidates.append(p)
 
     if not candidates:
         raise FileNotFoundError(
             f"Aucun run préparé dans {PREP_DATA_DIR}. "
             f"Lancez d'abord `python scripts/prepare_data.py`."
         )
-    return max(candidates)[1]
+    return max(candidates, key=lambda p: p.stat().st_mtime).name
 
 
 def build_dataset_profile(run: str | Path) -> dict[str, Any]:

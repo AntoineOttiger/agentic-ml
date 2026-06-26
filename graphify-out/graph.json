@@ -4,14 +4,174 @@
   "graph": {},
   "nodes": [
     {
+      "label": "prepare_data.py",
+      "file_type": "code",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_prepare_data",
+      "community": 9,
+      "norm_label": "prepare_data.py"
+    },
+    {
+      "label": "_latest_preproc_run()",
+      "file_type": "code",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "scripts_prepare_data_latest_preproc_run",
+      "community": 9,
+      "norm_label": "_latest_preproc_run()"
+    },
+    {
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "path",
+      "community": 9,
+      "norm_label": "path"
+    },
+    {
+      "label": "_resolve_preproc_run()",
+      "file_type": "code",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "scripts_prepare_data_resolve_preproc_run",
+      "community": 9,
+      "norm_label": "_resolve_preproc_run()"
+    },
+    {
+      "label": "parse_args()",
+      "file_type": "code",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "scripts_prepare_data_parse_args",
+      "community": 9,
+      "norm_label": "parse_args()"
+    },
+    {
+      "label": "Namespace",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "namespace",
+      "community": 5,
+      "norm_label": "namespace"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "scripts_prepare_data_main",
+      "community": 9,
+      "norm_label": "main()"
+    },
+    {
+      "label": "Entry point: split a preprocessed dataset into train/val/test partitions.",
+      "file_type": "rationale",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "scripts_prepare_data_rationale_1",
+      "community": 9,
+      "norm_label": "entry point: split a preprocessed dataset into train/val/test partitions."
+    },
+    {
+      "label": "prepare_data.py",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "data_manager_prepare_data",
+      "community": 5,
+      "norm_label": "prepare_data.py"
+    },
+    {
+      "label": "DataSplitter",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "data_manager_prepare_data_datasplitter",
+      "community": 9,
+      "norm_label": "datasplitter"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "data_manager_prepare_data_datasplitter_init",
+      "community": 9,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": "._next_run_folder()",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "data_manager_prepare_data_datasplitter_next_run_folder",
+      "community": 9,
+      "norm_label": "._next_run_folder()"
+    },
+    {
+      "label": "._stratified_split()",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "data_manager_prepare_data_datasplitter_stratified_split",
+      "community": 9,
+      "norm_label": "._stratified_split()"
+    },
+    {
+      "label": "DataFrame",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "dataframe",
+      "community": 9,
+      "norm_label": "dataframe"
+    },
+    {
+      "label": "._split_info()",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "data_manager_prepare_data_datasplitter_split_info",
+      "community": 9,
+      "norm_label": "._split_info()"
+    },
+    {
+      "label": ".split_and_save()",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "data_manager_prepare_data_datasplitter_split_and_save",
+      "community": 9,
+      "norm_label": ".split_and_save()"
+    },
+    {
       "label": "schema.py",
       "file_type": "code",
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "preproc_agent_schema",
       "community": 8,
-      "norm_label": "schema.py"
+      "norm_label": "schema.py",
+      "id": "preproc_agent_schema"
     },
     {
       "label": "ColumnReport",
@@ -19,9 +179,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "preproc_agent_schema_columnreport",
       "community": 8,
-      "norm_label": "columnreport"
+      "norm_label": "columnreport",
+      "id": "preproc_agent_schema_columnreport"
     },
     {
       "label": "BaseModel",
@@ -29,9 +189,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "basemodel",
       "community": 8,
-      "norm_label": "basemodel"
+      "norm_label": "basemodel",
+      "id": "basemodel"
     },
     {
       "label": "RecommendedAction",
@@ -39,9 +199,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "preproc_agent_schema_recommendedaction",
       "community": 8,
-      "norm_label": "recommendedaction"
+      "norm_label": "recommendedaction",
+      "id": "preproc_agent_schema_recommendedaction"
     },
     {
       "label": ".flatten_columns()",
@@ -49,9 +209,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "preproc_agent_schema_recommendedaction_flatten_columns",
       "community": 8,
-      "norm_label": ".flatten_columns()"
+      "norm_label": ".flatten_columns()",
+      "id": "preproc_agent_schema_recommendedaction_flatten_columns"
     },
     {
       "label": "AnalysisReport",
@@ -59,9 +219,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L56",
       "_origin": "ast",
-      "id": "preproc_agent_schema_analysisreport",
       "community": 8,
-      "norm_label": "analysisreport"
+      "norm_label": "analysisreport",
+      "id": "preproc_agent_schema_analysisreport"
     },
     {
       "label": "GeneratedCode",
@@ -69,9 +229,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L74",
       "_origin": "ast",
-      "id": "preproc_agent_schema_generatedcode",
       "community": 8,
-      "norm_label": "generatedcode"
+      "norm_label": "generatedcode",
+      "id": "preproc_agent_schema_generatedcode"
     },
     {
       "label": "Mod\u00e8les Pydantic pour les sorties structur\u00e9es des agents preproc.  - `AnalysisRe",
@@ -79,9 +239,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "preproc_agent_schema_rationale_1",
       "community": 8,
-      "norm_label": "modeles pydantic pour les sorties structurees des agents preproc.  - `analysisre"
+      "norm_label": "modeles pydantic pour les sorties structurees des agents preproc.  - `analysisre",
+      "id": "preproc_agent_schema_rationale_1"
     },
     {
       "label": "Diagnostic d'une colonne.",
@@ -89,9 +249,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L15",
       "_origin": "ast",
-      "id": "preproc_agent_schema_rationale_15",
       "community": 8,
-      "norm_label": "diagnostic d'une colonne."
+      "norm_label": "diagnostic d'une colonne.",
+      "id": "preproc_agent_schema_rationale_15"
     },
     {
       "label": "Action recommand\u00e9e par l'Agent Analyse.",
@@ -99,9 +259,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "preproc_agent_schema_rationale_29",
       "community": 8,
-      "norm_label": "action recommandee par l'agent analyse."
+      "norm_label": "action recommandee par l'agent analyse.",
+      "id": "preproc_agent_schema_rationale_29"
     },
     {
       "label": "Rapport structur\u00e9 de l'Agent Analyse (structure JSON de la spec).",
@@ -109,9 +269,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L57",
       "_origin": "ast",
-      "id": "preproc_agent_schema_rationale_57",
       "community": 8,
-      "norm_label": "rapport structure de l'agent analyse (structure json de la spec)."
+      "norm_label": "rapport structure de l'agent analyse (structure json de la spec).",
+      "id": "preproc_agent_schema_rationale_57"
     },
     {
       "label": "Code Python g\u00e9n\u00e9r\u00e9 par un agent + libell\u00e9s des transformations effectu\u00e9es.",
@@ -119,9 +279,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L75",
       "_origin": "ast",
-      "id": "preproc_agent_schema_rationale_75",
       "community": 8,
-      "norm_label": "code python genere par un agent + libelles des transformations effectuees."
+      "norm_label": "code python genere par un agent + libelles des transformations effectuees.",
+      "id": "preproc_agent_schema_rationale_75"
     },
     {
       "label": "config.py",
@@ -129,9 +289,9 @@
       "source_file": "src/agentic_ml/config.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "agentic_ml_config",
       "community": 5,
-      "norm_label": "config.py"
+      "norm_label": "config.py",
+      "id": "agentic_ml_config"
     },
     {
       "label": "results.py",
@@ -152,16 +312,6 @@
       "community": 0,
       "norm_label": "_write_json()",
       "id": "training_agent_results_write_json"
-    },
-    {
-      "label": "Path",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "path",
-      "id": "path"
     },
     {
       "label": "_save_best_model()",
@@ -344,16 +494,6 @@
       "id": "scripts_run_preproc_agent_parse_args"
     },
     {
-      "label": "Namespace",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "namespace",
-      "id": "namespace"
-    },
-    {
       "label": "main()",
       "file_type": "code",
       "source_file": "scripts/run_preproc_agent.py",
@@ -512,66 +652,6 @@
       "community": 3,
       "norm_label": "graphify",
       "id": "claude_graphify"
-    },
-    {
-      "label": "prepare_data.py",
-      "file_type": "code",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "prepare_data.py",
-      "id": "scripts_prepare_data"
-    },
-    {
-      "label": "_latest_preproc_run()",
-      "file_type": "code",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "_latest_preproc_run()",
-      "id": "scripts_prepare_data_latest_preproc_run"
-    },
-    {
-      "label": "_resolve_preproc_run()",
-      "file_type": "code",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L36",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "_resolve_preproc_run()",
-      "id": "scripts_prepare_data_resolve_preproc_run"
-    },
-    {
-      "label": "parse_args()",
-      "file_type": "code",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L47",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "parse_args()",
-      "id": "scripts_prepare_data_parse_args"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L85",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "main()",
-      "id": "scripts_prepare_data_main"
-    },
-    {
-      "label": "Entry point: split a preprocessed dataset into train/val/test partitions.",
-      "file_type": "rationale",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "entry point: split a preprocessed dataset into train/val/test partitions.",
-      "id": "scripts_prepare_data_rationale_1"
     },
     {
       "label": "run_optimization.py",
@@ -882,86 +962,6 @@
       "community": 2,
       "norm_label": "construit le profil complet d'un run en un seul appel.      combine `metadata.js",
       "id": "training_agent_profile_rationale_43"
-    },
-    {
-      "label": "prepare_data.py",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "prepare_data.py",
-      "id": "data_manager_prepare_data"
-    },
-    {
-      "label": "DataSplitter",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "datasplitter",
-      "id": "data_manager_prepare_data_datasplitter"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": ".__init__()",
-      "id": "data_manager_prepare_data_datasplitter_init"
-    },
-    {
-      "label": "._next_run_folder()",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L44",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "._next_run_folder()",
-      "id": "data_manager_prepare_data_datasplitter_next_run_folder"
-    },
-    {
-      "label": "._stratified_split()",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L57",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "._stratified_split()",
-      "id": "data_manager_prepare_data_datasplitter_stratified_split"
-    },
-    {
-      "label": "DataFrame",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "dataframe",
-      "id": "dataframe"
-    },
-    {
-      "label": "._split_info()",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L68",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": "._split_info()",
-      "id": "data_manager_prepare_data_datasplitter_split_info"
-    },
-    {
-      "label": ".split_and_save()",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L75",
-      "_origin": "ast",
-      "community": 9,
-      "norm_label": ".split_and_save()",
-      "id": "data_manager_prepare_data_datasplitter_split_and_save"
     },
     {
       "label": "client.py",
@@ -3006,6 +3006,523 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data",
+      "target": "scripts_prepare_data_latest_preproc_run"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data",
+      "target": "scripts_prepare_data_main"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data",
+      "target": "scripts_prepare_data_parse_args"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data",
+      "target": "scripts_prepare_data_resolve_preproc_run"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data_rationale_1",
+      "target": "scripts_prepare_data"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data_latest_preproc_run",
+      "target": "path"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data_resolve_preproc_run",
+      "target": "scripts_prepare_data_latest_preproc_run"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter_init",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter_next_run_folder",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter_split_and_save",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_graph_run_preproc_agent",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/results.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_results_next_run_folder",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/results.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_results_persist_results",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/results.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_results_write_json",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data_resolve_preproc_run",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/graph.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_graph_run_agent",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/profile.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_profile_build_dataset_profile",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/results.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_results_persist_results",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/results.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_results_save_best_model",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/results.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_results_write_json",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/tools.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_tools_get_dataset_profile",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/tools.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_tools_launch_ml_pipeline",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/training/dataset.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_dataset_load_prepared_run",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/training/dataset.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_dataset_resolve_run_dir",
+      "target": "path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/training/optimizer.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_optimizer_hyperparameteroptimizer_optimize",
+      "target": "path"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data_main",
+      "target": "scripts_prepare_data_resolve_preproc_run"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data_main",
+      "target": "scripts_prepare_data_parse_args"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data_parse_args",
+      "target": "namespace"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/run_optimization.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_run_optimization_parse_args",
+      "target": "namespace"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/run_preproc_agent.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_run_preproc_agent_parse_args",
+      "target": "namespace"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/run_training_agent.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_run_training_agent_parse_args",
+      "target": "namespace"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "scripts_prepare_data_main",
+      "target": "data_manager_prepare_data_datasplitter"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data",
+      "target": "data_manager_prepare_data_datasplitter"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter",
+      "target": "data_manager_prepare_data_datasplitter_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter",
+      "target": "data_manager_prepare_data_datasplitter_next_run_folder"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter",
+      "target": "data_manager_prepare_data_datasplitter_split_and_save"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter",
+      "target": "data_manager_prepare_data_datasplitter_split_info"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter",
+      "target": "data_manager_prepare_data_datasplitter_stratified_split"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter_split_and_save",
+      "target": "data_manager_prepare_data_datasplitter_next_run_folder"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter_split_and_save",
+      "target": "data_manager_prepare_data_datasplitter_stratified_split"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter_stratified_split",
+      "target": "dataframe"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter_split_info",
+      "target": "dataframe"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_profiling_correlations",
+      "target": "dataframe"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_profiling_profile_dataframe",
+      "target": "dataframe"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/sandbox.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_sandbox_execute_code",
+      "target": "dataframe"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L117",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data_datasplitter_split_and_save",
+      "target": "data_manager_prepare_data_datasplitter_split_info"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
@@ -3151,9 +3668,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "preproc_agent_schema_recommendedaction",
-      "target": "preproc_agent_schema_recommendedaction_flatten_columns",
-      "confidence_score": 1.0
+      "target": "preproc_agent_schema_recommendedaction_flatten_columns"
     },
     {
       "relation": "rationale_for",
@@ -3161,9 +3678,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "preproc_agent_schema_rationale_57",
-      "target": "preproc_agent_schema_analysisreport",
-      "confidence_score": 1.0
+      "target": "preproc_agent_schema_analysisreport"
     },
     {
       "relation": "rationale_for",
@@ -3171,20 +3688,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
       "source_location": "L75",
       "weight": 1.0,
-      "source": "preproc_agent_schema_rationale_75",
-      "target": "preproc_agent_schema_generatedcode",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L9",
-      "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "data_manager_prepare_data",
-      "target": "agentic_ml_config"
+      "source": "preproc_agent_schema_rationale_75",
+      "target": "preproc_agent_schema_generatedcode"
     },
     {
       "relation": "imports_from",
@@ -3239,17 +3745,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "preproc_agent_results",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data",
       "target": "agentic_ml_config"
     },
     {
@@ -3423,215 +3918,6 @@
       "confidence_score": 1.0,
       "source": "training_agent_results_persist_results",
       "target": "training_agent_results_write_json"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/results.py",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_results_write_json",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter_init",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter_next_run_folder",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L74",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter_split_and_save",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_graph_run_preproc_agent",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/results.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_results_next_run_folder",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/results.py",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_results_persist_results",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/results.py",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_results_write_json",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data_latest_preproc_run",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data_resolve_preproc_run",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/graph.py",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_graph_run_agent",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/profile.py",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_profile_build_dataset_profile",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/results.py",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_results_persist_results",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/results.py",
-      "source_location": "L33",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_results_save_best_model",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/tools.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_tools_get_dataset_profile",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/tools.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_tools_launch_ml_pipeline",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/training/dataset.py",
-      "source_location": "L42",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_dataset_load_prepared_run",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/training/dataset.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_dataset_resolve_run_dir",
-      "target": "path"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/training/optimizer.py",
-      "source_location": "L51",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_optimizer_hyperparameteroptimizer_optimize",
-      "target": "path"
     },
     {
       "relation": "calls",
@@ -3928,50 +4214,6 @@
       "target": "scripts_run_preproc_agent_parse_args"
     },
     {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/run_preproc_agent.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_run_preproc_agent_parse_args",
-      "target": "namespace"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data_parse_args",
-      "target": "namespace"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/run_optimization.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_run_optimization_parse_args",
-      "target": "namespace"
-    },
-    {
-      "relation": "references",
-      "context": "return_type",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/run_training_agent.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_run_training_agent_parse_args",
-      "target": "namespace"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "INFERRED",
@@ -4257,100 +4499,6 @@
       "confidence_score": 1.0,
       "source": "claude_agentic_ml",
       "target": "claude_\u00e9tat_du_projet"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data",
-      "target": "scripts_prepare_data_latest_preproc_run"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L48",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data",
-      "target": "scripts_prepare_data_main"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data",
-      "target": "scripts_prepare_data_parse_args"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data",
-      "target": "scripts_prepare_data_resolve_preproc_run"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data_rationale_1",
-      "target": "scripts_prepare_data"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data_resolve_preproc_run",
-      "target": "scripts_prepare_data_latest_preproc_run"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L87",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data_main",
-      "target": "scripts_prepare_data_resolve_preproc_run"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data_main",
-      "target": "scripts_prepare_data_parse_args"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "scripts_prepare_data_main",
-      "target": "data_manager_prepare_data_datasplitter"
     },
     {
       "relation": "contains",
@@ -5139,154 +5287,6 @@
       "confidence_score": 1.0,
       "source": "utils_rate_limiter_mistralratelimitcallback_on_llm_start",
       "target": "any"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data",
-      "target": "data_manager_prepare_data_datasplitter"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L24",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter",
-      "target": "data_manager_prepare_data_datasplitter_init"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter",
-      "target": "data_manager_prepare_data_datasplitter_next_run_folder"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L74",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter",
-      "target": "data_manager_prepare_data_datasplitter_split_and_save"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L67",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter",
-      "target": "data_manager_prepare_data_datasplitter_split_info"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L56",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter",
-      "target": "data_manager_prepare_data_datasplitter_stratified_split"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L88",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter_split_and_save",
-      "target": "data_manager_prepare_data_datasplitter_next_run_folder"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L91",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter_split_and_save",
-      "target": "data_manager_prepare_data_datasplitter_stratified_split"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L56",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter_stratified_split",
-      "target": "dataframe"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L67",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter_split_info",
-      "target": "dataframe"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
-      "source_location": "L90",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_profiling_correlations",
-      "target": "dataframe"
-    },
-    {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
-      "source_location": "L121",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_profiling_profile_dataframe",
-      "target": "dataframe"
-    },
-    {
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/sandbox.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_sandbox_execute_code",
-      "target": "dataframe"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L117",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data_datasplitter_split_and_save",
-      "target": "data_manager_prepare_data_datasplitter_split_info"
     },
     {
       "relation": "contains",
@@ -7982,5 +7982,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8e1b34009210ae00ee6ddf1339add01ed4a05fba"
+  "built_at_commit": "adc3f322105256c499d5fcaa55a2cd0ccbdc47e4"
 }
