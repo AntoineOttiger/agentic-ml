@@ -1,7 +1,7 @@
 # Graph Report - agentic-ml  (2026-06-26)
 
 ## Corpus Check
-- 42 files · ~11,336 words
+- 42 files · ~11,346 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `adc3f322`
+- Built from commit: `708cf6ef`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -128,7 +128,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.121) - this node is a cross-community bridge._
 - **Why does `build_estimator()` connect `Community 1` to `Community 0`, `Community 4`, `Community 6`?**
   _High betweenness centrality (0.110) - this node is a cross-community bridge._
-- **What connects `Entry point: split a preprocessed dataset into train/val/test partitions.`, `Modèles Pydantic pour les sorties structurées des agents preproc.  - `AnalysisRe`, `Diagnostic d'une colonne.` to the rest of the system?**
+- **What connects `Résolution du run de données et construction du profil de dataset.  Le profil es`, `Renvoie l'identifiant du run le plus récent de `data/02_prepared/`.      S'appui`, `Construit le profil complet d'un run en un seul appel.      Combine `metadata.js` to the rest of the system?**
   _119 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.09747899159663866 - nodes in this community are weakly interconnected._
