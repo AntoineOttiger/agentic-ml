@@ -6,7 +6,6 @@ déterministes — l'auto-terminaison est volontairement séparée de la proposi
 from __future__ import annotations
 
 import logging
-from typing import TYPE_CHECKING
 
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_mistralai import ChatMistralAI
@@ -20,11 +19,10 @@ from agentic_ml.agents.training_agent.prompts import (
     build_context,
     build_stop_context,
 )
+from agentic_ml.agents.training_agent.report import format_class_report
 from agentic_ml.agents.training_agent.schema import Experiment, StopDecision, to_search_space
 from agentic_ml.agents.training_agent.state import AgentState, Trial
-
-if TYPE_CHECKING:
-    from agentic_ml.mcp_server.client import MCPToolClient
+from agentic_ml.agents.training_agent.tools import launch_ml_pipeline
 
 logger = logging.getLogger("agentic_ml.agents.training_agent")
 
@@ -35,12 +33,12 @@ def make_llm(model: str = AGENT_MODEL, *, temperature: float = 0.4) -> ChatMistr
     return ChatMistralAI(model=model, temperature=temperature, callbacks=[callback])
 
 
-def propose_experiment(state: AgentState, llm: ChatMistralAI, mcp_client: MCPToolClient) -> dict:
+def propose_experiment(state: AgentState, llm: ChatMistralAI) -> dict:
     """Formule une hypothèse et propose une configuration (model_type, search_space)."""
     structured = llm.with_structured_output(Experiment)
     messages = [
         SystemMessage(content=SYSTEM_PROMPT),
-        HumanMessage(content=build_context(state, mcp_client)),
+        HumanMessage(content=build_context(state)),
     ]
     logger.info("propose | appel Mistral en cours (essai %d/%d)…", state.get("runs_used", 0) + 1, state["max_runs"])
     experiment: Experiment = structured.invoke(messages)
@@ -56,18 +54,15 @@ def propose_experiment(state: AgentState, llm: ChatMistralAI, mcp_client: MCPToo
     return {"current_experiment": current, "last_error": None}
 
 
-def run_pipeline(state: AgentState, mcp_client: MCPToolClient) -> dict:
+def run_pipeline(state: AgentState) -> dict:
     """Valide et lance la pipeline pour la config proposée, met à jour la mémoire."""
     exp = state["current_experiment"]
-    result = mcp_client.call_tool(
-        "launch_ml_pipeline_tool",
-        {
-            "prepared_run": state["prepared_run"],
-            "model_type": exp["model_type"],
-            "search_space": exp["search_space"],
-            "n_trials": state["n_trials"],
-            "seed": state["seed"],
-        },
+    result = launch_ml_pipeline(
+        state["prepared_run"],
+        exp["model_type"],
+        exp["search_space"],
+        n_trials=state["n_trials"],
+        seed=state["seed"],
     )
 
     if "error" in result:
@@ -81,6 +76,7 @@ def run_pipeline(state: AgentState, mcp_client: MCPToolClient) -> dict:
         "hyperparameters": result["best_hyperparams"],
         "train_f1": result["train_f1"],
         "eval_f1": result["eval_f1"],
+        "val_class_report": result["val_class_report"],
     }
 
     trial_log = state.get("trial_log", []) + [trial]
@@ -92,6 +88,10 @@ def run_pipeline(state: AgentState, mcp_client: MCPToolClient) -> dict:
         "run | essai #%d %s | train_f1=%.4f eval_f1=%.4f (overfit=%.4f)",
         trial["run_id"], trial["model_type"], trial["train_f1"], trial["eval_f1"],
         result["overfitting_score"],
+    )
+    logger.info(
+        "run | détail par classe (validation) :\n%s",
+        format_class_report(result["val_class_report"]),
     )
 
     return {

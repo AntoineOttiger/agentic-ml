@@ -17,7 +17,7 @@ from agentic_ml.config import (
     DEFAULT_RANDOM_SEED,
     DEFAULT_TARGET_F1,
 )
-from agentic_ml.agents.training_agent import run_agent
+from agentic_ml.agents.training_agent import format_class_report, run_agent
 
 
 def parse_args() -> argparse.Namespace:
@@ -87,6 +87,8 @@ def main() -> None:
     if best:
         print(f"Meilleur modèle : {best['model_type']} (eval_f1={best['eval_f1']:.4f})")
         print(f"Hyperparamètres : {json.dumps(best['hyperparameters'], ensure_ascii=False)}")
+        print("Détail par classe (validation) :")
+        print(format_class_report(best["val_class_report"]))
     else:
         print("Aucun essai valide n'a été enregistré.")
 

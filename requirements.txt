@@ -7,4 +7,3 @@ langgraph
 langchain-core
 langchain-mistralai
 python-dotenv
-mcp

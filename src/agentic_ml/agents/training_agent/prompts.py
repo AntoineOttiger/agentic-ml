@@ -2,14 +2,11 @@
 from __future__ import annotations
 
 import json
-from typing import TYPE_CHECKING
 
 from agentic_ml.training.models import available_models
 
 from agentic_ml.agents.training_agent.state import AgentState
-
-if TYPE_CHECKING:
-    from agentic_ml.mcp_server.client import MCPToolClient
+from agentic_ml.agents.training_agent.tools import get_model_schema
 
 SYSTEM_PROMPT = f"""\
 Tu es un ingénieur en machine learning. Ton objectif est de MAXIMISER le F1-score \
@@ -37,16 +34,16 @@ maximum est un plafond dur déjà appliqué séparément : tu n'as pas à t'en s
 concentre-toi sur la pertinence de poursuivre la recherche."""
 
 
-def _model_schemas(mcp_client: MCPToolClient) -> str:
+def _model_schemas() -> str:
     """Schémas des hyperparamètres valides de tous les modèles disponibles."""
     schemas = {
-        m: mcp_client.call_tool("get_model_schema_tool", {"model_type": m})["hyperparameters"]
+        m: get_model_schema(m)["hyperparameters"]
         for m in available_models()
     }
     return json.dumps(schemas, indent=2, ensure_ascii=False)
 
 
-def build_context(state: AgentState, mcp_client: MCPToolClient) -> str:
+def build_context(state: AgentState) -> str:
     """Assemble le contexte dynamique pour le nœud propose_experiment."""
     runs_used = state.get("runs_used", 0)
     max_runs = state["max_runs"]
@@ -62,7 +59,7 @@ def build_context(state: AgentState, mcp_client: MCPToolClient) -> str:
         json.dumps(state["dataset_profile"], indent=2, ensure_ascii=False),
         "",
         "## Schémas des modèles (hyperparamètres valides et bornes)",
-        _model_schemas(mcp_client),
+        _model_schemas(),
         "",
         "## Budget",
         f"runs utilisés : {runs_used} / {max_runs} — runs restants : {budget_left}",

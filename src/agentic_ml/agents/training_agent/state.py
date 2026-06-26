@@ -18,6 +18,7 @@ class Trial(TypedDict):
     hyperparameters: dict[str, Any]
     train_f1: float
     eval_f1: float
+    val_class_report: dict[str, Any]
 
 
 class AgentState(TypedDict, total=False):

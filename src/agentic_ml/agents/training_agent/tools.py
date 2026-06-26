@@ -13,6 +13,21 @@ from pathlib import Path
 from typing import Any
 
 from agentic_ml.config import DEFAULT_N_TRIALS, DEFAULT_RANDOM_SEED
+
+
+def _to_python(obj: Any) -> Any:
+    """Convertit récursivement les types numpy en types Python natifs (JSON-sérialisables).
+
+    Convertit clés et valeurs : une clé numpy (ex. labels de classe entiers d'un
+    LabelEncoder) n'est pas sérialisable telle quelle (`keys must be str/int/...`).
+    """
+    if isinstance(obj, dict):
+        return {_to_python(k): _to_python(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_to_python(v) for v in obj]
+    if hasattr(obj, "item"):  # numpy scalar
+        return obj.item()
+    return obj
 from agentic_ml.training.models import available_models, get_model_spec
 from agentic_ml.training.optimizer import HyperparameterOptimizer
 from agentic_ml.training.search_space import validate_search_space
@@ -81,9 +96,10 @@ def launch_ml_pipeline(
     optimizer = HyperparameterOptimizer(random_seed=seed, n_trials=n_trials)
     result = optimizer.optimize(prepared_run, model_type, search_space)
 
-    return {
+    return _to_python({
         "train_f1": result.train_f1,
         "eval_f1": result.eval_f1,
         "overfitting_score": result.train_f1 - result.eval_f1,
         "best_hyperparams": result.best_params,
-    }
+        "val_class_report": result.val_class_report,
+    })

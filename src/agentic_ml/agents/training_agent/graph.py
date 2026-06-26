@@ -29,18 +29,18 @@ from agentic_ml.agents.training_agent.nodes import (
 from agentic_ml.agents.training_agent.profile import latest_prepared_run
 from agentic_ml.agents.training_agent.results import persist_results
 from agentic_ml.agents.training_agent.state import AgentState
-from agentic_ml.mcp_server.client import MCPToolClient
+from agentic_ml.agents.training_agent.tools import get_dataset_profile
 
 
-def build_agent_graph(llm: ChatMistralAI, mcp_client: MCPToolClient):
+def build_agent_graph(llm: ChatMistralAI):
     """Construit et compile le graphe de la boucle de recherche.
 
     Flux : propose_experiment → run_pipeline → evaluate_stop → (boucle | fin).
     """
     graph = StateGraph(AgentState)
 
-    graph.add_node("propose_experiment", partial(propose_experiment, llm=llm, mcp_client=mcp_client))
-    graph.add_node("run_pipeline", partial(run_pipeline, mcp_client=mcp_client))
+    graph.add_node("propose_experiment", partial(propose_experiment, llm=llm))
+    graph.add_node("run_pipeline", run_pipeline)
     graph.add_node("evaluate_stop", partial(evaluate_stop, llm=llm))
 
     graph.add_edge(START, "propose_experiment")
@@ -78,34 +78,31 @@ def run_agent(
     """
     run_id = prepared_run or latest_prepared_run()
 
-    with MCPToolClient() as mcp_client:
-        initial_state: AgentState = {
-            "dataset_profile": mcp_client.call_tool(
-                "get_dataset_profile_tool", {"run": run_id}
-            ),
-            "objective": "maximize eval_f1",
-            "prepared_run": run_id,
-            "max_runs": max_runs,
-            "runs_used": 0,
-            "stop_mode": stop_mode,
-            "target_f1": target_f1,
-            "epsilon": CONVERGENCE_EPSILON,
-            "patience": CONVERGENCE_PATIENCE,
-            "n_trials": n_trials,
-            "seed": seed,
-            "trial_log": [],
-            "best_trial": None,
-            "current_experiment": None,
-            "last_error": None,
-            "decision": "continue",
-            "stop_reason": None,
-        }
+    initial_state: AgentState = {
+        "dataset_profile": get_dataset_profile(run_id),
+        "objective": "maximize eval_f1",
+        "prepared_run": run_id,
+        "max_runs": max_runs,
+        "runs_used": 0,
+        "stop_mode": stop_mode,
+        "target_f1": target_f1,
+        "epsilon": CONVERGENCE_EPSILON,
+        "patience": CONVERGENCE_PATIENCE,
+        "n_trials": n_trials,
+        "seed": seed,
+        "trial_log": [],
+        "best_trial": None,
+        "current_experiment": None,
+        "last_error": None,
+        "decision": "continue",
+        "stop_reason": None,
+    }
 
-        app = build_agent_graph(make_llm(model), mcp_client)
-        # Plafond de sécurité : au pire un propose+run+eval par budget, plus une marge.
-        final_state: AgentState = app.invoke(
-            initial_state, {"recursion_limit": max_runs * 3 + 10}
-        )
+    app = build_agent_graph(make_llm(model))
+    # Plafond de sécurité : au pire un propose+run+eval par budget, plus une marge.
+    final_state: AgentState = app.invoke(
+        initial_state, {"recursion_limit": max_runs * 3 + 10}
+    )
 
     persist_kwargs = {} if results_dir is None else {"results_dir": results_dir}
     persist_results(final_state, **persist_kwargs)

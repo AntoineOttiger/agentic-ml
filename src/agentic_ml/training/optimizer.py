@@ -8,7 +8,7 @@ from typing import Any
 import logging
 
 import optuna
-from sklearn.metrics import f1_score
+from sklearn.metrics import classification_report, f1_score
 
 from agentic_ml.config import (
     DEFAULT_F1_AVERAGE,
@@ -24,6 +24,14 @@ optuna.logging.set_verbosity(optuna.logging.WARNING)
 logger = logging.getLogger("agentic_ml.optimizer")
 
 
+def _to_python(d: dict) -> dict:
+    """Convertit récursivement les scalaires numpy en types Python natifs."""
+    return {
+        k: _to_python(v) if isinstance(v, dict) else (v.item() if hasattr(v, "item") else v)
+        for k, v in d.items()
+    }
+
+
 @dataclass
 class OptimizationResult:
     """Résultat d'une optimisation : scores du meilleur modèle et sa configuration."""
@@ -32,6 +40,7 @@ class OptimizationResult:
     best_params: dict[str, Any]
     train_f1: float
     eval_f1: float
+    val_class_report: dict
     n_trials: int
 
 
@@ -103,6 +112,12 @@ class HyperparameterOptimizer:
             best_params=study.best_params,
             train_f1=self._f1(best_estimator, data.X_train, data.y_train),
             eval_f1=self._f1(best_estimator, data.X_val, data.y_val),
+            val_class_report=_to_python(classification_report(
+                data.y_val,
+                best_estimator.predict(data.X_val),
+                target_names=[str(c) for c in data.label_encoder.classes_],
+                output_dict=True,
+            )),
             n_trials=n_trials,
         )
 
