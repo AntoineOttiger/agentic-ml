@@ -12,6 +12,7 @@ from typing import Any
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_mistralai import ChatMistralAI
 
+from agentic_ml.utils.rate_limiter import MistralRateLimitCallback, get_rate_limiter
 from agentic_ml.agents.preproc_agent.prompts import (
     ANALYSIS_SYSTEM_PROMPT,
     FEATURE_ENGINEERING_SYSTEM_PROMPT,
@@ -30,8 +31,9 @@ logger = logging.getLogger("agentic_ml.agents.preproc_agent")
 
 
 def make_llm(model: str = PREPROC_AGENT_MODEL, *, temperature: float = 0.2) -> ChatMistralAI:
-    """Instancie le client Mistral (clé lue dans MISTRAL_API_KEY)."""
-    return ChatMistralAI(model=model, temperature=temperature)
+    """Instancie le client Mistral avec rate limiting (clé lue dans MISTRAL_API_KEY)."""
+    callback = MistralRateLimitCallback(get_rate_limiter())
+    return ChatMistralAI(model=model, temperature=temperature, callbacks=[callback])
 
 
 def _action_signature(action: dict[str, Any]) -> str:

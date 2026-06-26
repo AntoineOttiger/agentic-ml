@@ -12,6 +12,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_mistralai import ChatMistralAI
 
 from agentic_ml.config import AGENT_MODEL
+from agentic_ml.utils.rate_limiter import MistralRateLimitCallback, get_rate_limiter
 
 from agentic_ml.agents.training_agent.prompts import (
     STOP_SYSTEM_PROMPT,
@@ -29,8 +30,9 @@ logger = logging.getLogger("agentic_ml.agents.training_agent")
 
 
 def make_llm(model: str = AGENT_MODEL, *, temperature: float = 0.4) -> ChatMistralAI:
-    """Instancie le client Mistral (clé lue dans MISTRAL_API_KEY)."""
-    return ChatMistralAI(model=model, temperature=temperature)
+    """Instancie le client Mistral avec rate limiting (clé lue dans MISTRAL_API_KEY)."""
+    callback = MistralRateLimitCallback(get_rate_limiter())
+    return ChatMistralAI(model=model, temperature=temperature, callbacks=[callback])
 
 
 def propose_experiment(state: AgentState, llm: ChatMistralAI, mcp_client: MCPToolClient) -> dict:
