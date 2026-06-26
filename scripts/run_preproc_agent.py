@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 from agentic_ml.config import (
     DEFAULT_MAX_ITERATIONS,
     PREPROC_AGENT_MODEL,
-    RAW_IRIS_FILE,
+    DEFAULT_RAW_FILE,
     TARGET_COL,
 )
 from agentic_ml.agents.preproc_agent import run_preproc_agent
@@ -24,7 +24,7 @@ def parse_args() -> argparse.Namespace:
     )
     p.add_argument(
         "--input",
-        default=str(RAW_IRIS_FILE),
+        default=str(DEFAULT_RAW_FILE),
         help="Input CSV path. Default: %(default)s",
     )
     p.add_argument(

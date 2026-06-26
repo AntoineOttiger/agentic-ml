@@ -4,7 +4,7 @@ PROJECT_ROOT  = Path(__file__).resolve().parents[2]
 RAW_DATA_DIR  = PROJECT_ROOT / "data" / "00_raw"
 PREPROC_DATA_DIR = PROJECT_ROOT / "data" / "01_preproc"
 PREP_DATA_DIR = PROJECT_ROOT / "data" / "02_prepared"
-RAW_IRIS_FILE = RAW_DATA_DIR / "Iris.csv"
+DEFAULT_RAW_FILE = RAW_DATA_DIR / "Iris.csv"
 
 # Résultats des runs d'agent (trial_log, summary, best model)
 RESULTS_DIR   = PROJECT_ROOT / "results" / "agent_runs"

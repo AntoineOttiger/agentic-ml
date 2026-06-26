@@ -27,7 +27,7 @@ from agentic_ml.config import (
     DEFAULT_MAX_ITERATIONS,
     PREPROC_AGENT_MODEL,
     PREPROC_DATA_DIR,
-    RAW_IRIS_FILE,
+    DEFAULT_RAW_FILE,
     TARGET_COL,
 )
 
@@ -68,7 +68,7 @@ def run_preproc_agent(
     """Exécute la boucle de preprocessing de bout en bout et renvoie l'état final.
 
     Args:
-        input_csv: CSV d'entrée (défaut : `config.RAW_IRIS_FILE`).
+        input_csv: CSV d'entrée (défaut : `config.DEFAULT_RAW_FILE`).
         target_column: colonne cible à préserver pendant les transformations.
         max_iterations: garde-fou de la boucle de l'orchestrateur.
         model: identifiant du modèle Mistral.
@@ -77,7 +77,7 @@ def run_preproc_agent(
 
     Le DataFrame transformé et l'historique sont écrits sur disque à la fin.
     """
-    source = Path(input_csv) if input_csv is not None else RAW_IRIS_FILE
+    source = Path(input_csv) if input_csv is not None else DEFAULT_RAW_FILE
     df = pd.read_csv(source)
 
     if target_column not in df.columns:
