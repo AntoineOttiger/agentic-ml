@@ -18,17 +18,18 @@ from agentic_ml.training.dataset import resolve_run_dir
 def latest_prepared_run() -> str:
     """Renvoie l'identifiant du run le plus récent de `data/02_prepared/`.
 
-    S'appuie sur la convention de nommage de `DataSplitter` : `<dataset>_NNN`,
-    le plus grand suffixe numérique étant le plus récent.
+    S'appuie sur la convention de nommage de `DataSplitter` :
+    `<dataset>_<preproc_idx>_<prepared_idx>`. Le run le plus récent est celui
+    dont le tuple (preproc_idx, prepared_idx) est le plus grand.
     """
-    candidates: list[tuple[int, str]] = []
+    candidates: list[tuple[tuple[int, int], str]] = []
     if PREP_DATA_DIR.is_dir():
         for p in PREP_DATA_DIR.iterdir():
-            if not p.is_dir() or "_" not in p.name:
+            if not p.is_dir():
                 continue
-            suffix = p.name.rsplit("_", 1)[1]
-            if suffix.isdigit():
-                candidates.append((int(suffix), p.name))
+            parts = p.name.rsplit("_", 2)
+            if len(parts) == 3 and parts[1].isdigit() and parts[2].isdigit():
+                candidates.append(((int(parts[1]), int(parts[2])), p.name))
 
     if not candidates:
         raise FileNotFoundError(

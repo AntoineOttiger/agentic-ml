@@ -42,6 +42,7 @@ def propose_experiment(state: AgentState, llm: ChatMistralAI, mcp_client: MCPToo
         SystemMessage(content=SYSTEM_PROMPT),
         HumanMessage(content=build_context(state, mcp_client)),
     ]
+    logger.info("propose | appel Mistral en cours (essai %d/%d)…", state.get("runs_used", 0) + 1, state["max_runs"])
     experiment: Experiment = structured.invoke(messages)
 
     current = {

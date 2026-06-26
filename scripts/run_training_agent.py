@@ -27,7 +27,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--run",
         default=None,
-        help="Prepared run id (e.g. 'iris_001'). Default: most recent run.",
+        help="Prepared run id (e.g. 'iris_001_001'). Default: most recent run.",
     )
     p.add_argument(
         "--max-runs",

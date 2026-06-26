@@ -24,7 +24,7 @@ class PreparedData:
 
 
 def resolve_run_dir(run: str | Path) -> Path:
-    """Résout un identifiant de run ('001') ou un chemin complet en dossier existant."""
+    """Résout un identifiant de run ('iris_001_001') ou un chemin complet en dossier existant."""
     run_dir = Path(run)
     if not run_dir.is_absolute() and not run_dir.exists():
         run_dir = PREP_DATA_DIR / str(run)

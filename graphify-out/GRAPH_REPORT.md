@@ -1,16 +1,16 @@
 # Graph Report - agentic-ml  (2026-06-26)
 
 ## Corpus Check
-- 42 files · ~10,063 words
+- 41 files · ~10,618 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 263 nodes · 418 edges · 20 communities (14 shown, 6 thin omitted)
-- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 39 edges (avg confidence: 0.78)
+- 286 nodes · 455 edges · 22 communities (16 shown, 6 thin omitted)
+- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 43 edges (avg confidence: 0.79)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8719aba1`
+- Built from commit: `c8b2456d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -32,6 +32,7 @@
 - [[_COMMUNITY_Community 14|Community 14]]
 - [[_COMMUNITY_Community 15|Community 15]]
 - [[_COMMUNITY_Community 16|Community 16]]
+- [[_COMMUNITY_Community 20|Community 20]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `MLPipelineState` - 14 edges
@@ -46,29 +47,29 @@
 10. `available_models()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `main()` --calls--> `run_preproc_agent()`  [INFERRED]
-  scripts/run_preproc_agent.py → src/agentic_ml/agents/preproc_agent/graph.py
-- `main()` --calls--> `DataSplitter`  [INFERRED]
-  scripts/prepare_data.py → src/agentic_ml/data_manager/prepare_data.py
-- `main()` --calls--> `run_agent()`  [INFERRED]
-  scripts/run_agent.py → src/agentic_ml/agents/training_agent/graph.py
 - `parse_args()` --calls--> `available_models()`  [INFERRED]
   scripts/run_optimization.py → src/agentic_ml/training/models.py
 - `main()` --calls--> `HyperparameterOptimizer`  [INFERRED]
   scripts/run_optimization.py → src/agentic_ml/training/optimizer.py
+- `main()` --calls--> `run_preproc_agent()`  [INFERRED]
+  scripts/run_preproc_agent.py → src/agentic_ml/agents/preproc_agent/graph.py
+- `main()` --calls--> `run_agent()`  [INFERRED]
+  scripts/run_training_agent.py → src/agentic_ml/agents/training_agent/graph.py
+- `main()` --calls--> `DataSplitter`  [INFERRED]
+  scripts/prepare_data.py → src/agentic_ml/data_manager/prepare_data.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (20 total, 6 thin omitted)
+## Communities (22 total, 6 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.10
-Nodes (17): MCPToolClient, Client MCP synchrone pour les outils ML de l'agent.  Wrapping synchrone du clien, Context manager synchrone autour d'une session MCP stdio.      Usage:         wi, Coroutine principal : ouvre la connexion, signale 'ready', attend 'stop'., Appelle un outil MCP et retourne le résultat désérialisé.          Timeout de 30, build_agent_graph(), Assemblage du StateGraph et point d'entrée `run_agent`., Construit et compile le graphe de la boucle de recherche.      Flux : propose_ex (+9 more)
+Cohesion: 0.09
+Nodes (29): evaluate_stop(), _evaluate_stop_agent(), _evaluate_stop_convergence(), propose_experiment(), Nœuds de la boucle agentique.  Seul `propose_experiment` mobilise le LLM. `run_p, Décide de continuer ou d'arrêter, selon le `stop_mode`.      Le budget (`max_run, Critères d'arrêt déterministes : seuil cible puis convergence., Délègue la décision d'arrêt au LLM (budget déjà borné en amont). (+21 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.11
-Nodes (20): load_prepared_run(), PreparedData, Chargement d'un run de données préparées pour l'entraînement., Données d'un run, prêtes pour fit/predict., Résout un identifiant de run ('001') ou un chemin complet en dossier existant., Charge train/val d'un run, sépare X/y et encode la cible en entiers.      L'enco, resolve_run_dir(), build_estimator() (+12 more)
+Cohesion: 0.09
+Nodes (23): Un essai enregistré dans le `trial_log`., Trial, load_prepared_run(), PreparedData, Chargement d'un run de données préparées pour l'entraînement., Données d'un run, prêtes pour fit/predict., Résout un identifiant de run ('iris_001_001') ou un chemin complet en dossier ex, Charge train/val d'un run, sépare X/y et encode la cible en entiers.      L'enco (+15 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.12
@@ -79,32 +80,36 @@ Cohesion: 0.33
 Nodes (5): agentic-ml, Conventions, graphify, Structure, État du projet
 
 ### Community 4 - "Community 4"
-Cohesion: 0.10
-Nodes (36): Any, ChatMistralAI, _action_signature(), agent_analyse(), agent_feature_engineering(), agent_preprocessing(), _apply_action(), make_llm() (+28 more)
+Cohesion: 0.12
+Nodes (30): Any, ChatMistralAI, _action_signature(), agent_analyse(), agent_feature_engineering(), agent_preprocessing(), _apply_action(), Nœuds LangGraph du système preproc : Analyse, Preprocessing, Feature Engineering (+22 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.15
-Nodes (13): Namespace, main(), parse_args(), Entry point: split the Iris dataset into train/val/test partitions., main(), parse_args(), Entry point: run the autonomous model/hyperparameter search agent., main() (+5 more)
+Cohesion: 0.18
+Nodes (10): Namespace, main(), parse_args(), Entry point: lance une optimisation d'hyperparamètres (Optuna TPE) sur un run pr, main(), parse_args(), Entry point: run the preprocessing / feature-engineering agent system., main() (+2 more)
 
 ### Community 6 - "Community 6"
 Cohesion: 0.08
 Nodes (31): ExtraTreesClassifier, GaussianNB, HistGradientBoostingClassifier, LinearDiscriminantAnalysis, Pipeline, RandomForestClassifier, SVC, get_model_schema() (+23 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.09
-Nodes (27): evaluate_stop(), _evaluate_stop_agent(), _evaluate_stop_convergence(), make_llm(), Nœuds de la boucle agentique.  Seul `propose_experiment` mobilise le LLM. `run_p, Décide de continuer ou d'arrêter, selon le `stop_mode`.      Le budget (`max_run, Critères d'arrêt déterministes : seuil cible puis convergence., Délègue la décision d'arrêt au LLM (budget déjà borné en amont). (+19 more)
+Cohesion: 0.14
+Nodes (10): MCPToolClient, Client MCP synchrone pour les outils ML de l'agent.  Wrapping synchrone du clien, Context manager synchrone autour d'une session MCP stdio.      Usage:         wi, Coroutine principal : ouvre la connexion, signale 'ready', attend 'stop'., Appelle un outil MCP et retourne le résultat désérialisé.          Timeout de 30, build_agent_graph(), Assemblage du StateGraph et point d'entrée `run_agent`., Construit et compile le graphe de la boucle de recherche.      Flux : propose_ex (+2 more)
 
 ### Community 8 - "Community 8"
 Cohesion: 0.12
 Nodes (19): BaseModel, AnalysisReport, ColumnReport, GeneratedCode, Modèles Pydantic pour les sorties structurées des agents preproc.  - `AnalysisRe, Diagnostic d'une colonne., Action recommandée par l'Agent Analyse., Rapport structuré de l'Agent Analyse (structure JSON de la spec). (+11 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.12
-Nodes (17): DataSplitter, DataFrame, Path, build_preproc_graph(), Assemblage du StateGraph et point d'entrée `run_preproc_agent`.  Flux : analyse, Construit et compile le graphe de la boucle de preprocessing., Exécute la boucle de preprocessing de bout en bout et renvoie l'état final., run_preproc_agent() (+9 more)
+Cohesion: 0.10
+Nodes (22): DataSplitter, DataFrame, Path, build_preproc_graph(), Assemblage du StateGraph et point d'entrée `run_preproc_agent`.  Flux : analyse, Construit et compile le graphe de la boucle de preprocessing., Exécute la boucle de preprocessing de bout en bout et renvoie l'état final., run_preproc_agent() (+14 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.38
-Nodes (6): _column_profile(), _iqr_outliers(), Profilage d'un DataFrame en statistiques agrégées (sans données brutes).  L'Agen, Profil d'une colonne : type, nulls, cardinalité, distribution, issues., Détection d'outliers par la méthode IQR. Renvoie ``(présence, nombre)``., Series
+Cohesion: 0.25
+Nodes (10): _column_profile(), _correlations(), _iqr_outliers(), profile_dataframe(), Profilage d'un DataFrame en statistiques agrégées (sans données brutes).  L'Agen, Construit le profil statistique complet du DataFrame.      Args:         df: Dat, Profil d'une colonne : type, nulls, cardinalité, distribution, issues., Détection d'outliers par la méthode IQR. Renvoie ``(présence, nombre)``. (+2 more)
+
+### Community 20 - "Community 20"
+Cohesion: 0.11
+Nodes (16): BaseCallbackHandler, LLMResult, make_llm(), Instancie le client Mistral avec rate limiting (clé lue dans MISTRAL_API_KEY)., make_llm(), Instancie le client Mistral avec rate limiting (clé lue dans MISTRAL_API_KEY)., get_rate_limiter(), MistralRateLimitCallback (+8 more)
 
 ## Knowledge Gaps
 - **4 isolated node(s):** `Structure`, `Conventions`, `État du projet`, `graphify`
@@ -115,16 +120,16 @@ Nodes (6): _column_profile(), _iqr_outliers(), Profilage d'un DataFrame en stati
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `to_search_space()` connect `Community 8` to `Community 0`, `Community 4`?**
-  _High betweenness centrality (0.135) - this node is a cross-community bridge._
-- **Why does `build_estimator()` connect `Community 1` to `Community 4`, `Community 6`, `Community 7`?**
-  _High betweenness centrality (0.122) - this node is a cross-community bridge._
-- **What connects `Entry point: run the preprocessing / feature-engineering agent system.`, `Agents de recherche ML automatisée.`, `Système agentique de preprocessing / feature engineering (LangGraph + Mistral).` to the rest of the system?**
-  _105 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.126) - this node is a cross-community bridge._
+- **Why does `build_estimator()` connect `Community 1` to `Community 0`, `Community 4`, `Community 6`?**
+  _High betweenness centrality (0.117) - this node is a cross-community bridge._
+- **What connects `Entry point: split a preprocessed dataset into train/val/test partitions.`, `Entry point: lance une optimisation d'hyperparamètres (Optuna TPE) sur un run pr`, `Entry point: run the preprocessing / feature-engineering agent system.` to the rest of the system?**
+  _112 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08712121212121213 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.10541310541310542 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09425287356321839 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.125 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.09716599190283401 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11931818181818182 - nodes in this community are weakly interconnected._

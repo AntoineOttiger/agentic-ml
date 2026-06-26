@@ -13,8 +13,8 @@ from agentic_ml.config import (
     DEFAULT_TEST_SIZE,
     DROP_COLS,
     PREP_DATA_DIR,
+    PREPROC_FILE,
     PROJECT_ROOT,
-    RAW_IRIS_FILE,
     RUN_FOLDER_WIDTH,
     TARGET_COL,
 )
@@ -23,14 +23,15 @@ from agentic_ml.config import (
 class DataSplitter:
     def __init__(
         self,
-        source_path: Path | str = RAW_IRIS_FILE,
+        preproc_run_dir: Path | str,
         output_dir: Path | str = PREP_DATA_DIR,
         mode: str = DEFAULT_MODE,
         test_size: float = DEFAULT_TEST_SIZE,
         val_size: float = DEFAULT_VAL_SIZE,
         random_seed: int = DEFAULT_RANDOM_SEED,
     ) -> None:
-        self.source_path = Path(source_path)
+        self.preproc_run_dir = Path(preproc_run_dir)
+        self.source_path = self.preproc_run_dir / PREPROC_FILE
         self.output_dir = Path(output_dir)
         self.mode = mode
         self.test_size = test_size
@@ -41,8 +42,8 @@ class DataSplitter:
             raise ValueError(f"mode must be '2way' or '3way', got '{mode}'")
 
     def _next_run_folder(self) -> Path:
-        dataset_name = self.source_path.stem.lower()
-        prefix = f"{dataset_name}_"
+        dataset_name, preproc_idx = self.preproc_run_dir.name.rsplit("_", 1)
+        prefix = f"{dataset_name}_{preproc_idx}_"
         existing = [
             int(p.name[len(prefix):])
             for p in self.output_dir.iterdir()
@@ -108,6 +109,7 @@ class DataSplitter:
         metadata = {
             "run_id": run_id,
             "created_at": datetime.now().isoformat(timespec="seconds"),
+            "preproc_run_id": self.preproc_run_dir.name,
             "source_file": str(self.source_path.relative_to(PROJECT_ROOT)).replace("\\", "/"),
             "mode": self.mode,
             "random_seed": self.random_seed,

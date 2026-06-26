@@ -56,7 +56,7 @@ class MCPToolClient:
 
     async def _run(self) -> None:
         """Coroutine principal : ouvre la connexion, signale 'ready', attend 'stop'."""
-        env = {**os.environ, "PYTHONPATH": _SRC_DIR}
+        env = {**os.environ, "PYTHONPATH": _SRC_DIR, "OMP_NUM_THREADS": "1"}
         params = StdioServerParameters(
             command=sys.executable,
             args=["-m", "agentic_ml.mcp_server"],

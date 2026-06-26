@@ -29,7 +29,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--run",
         required=True,
-        help="Identifiant du run préparé (ex. '001') ou chemin vers le dossier.",
+        help="Identifiant du run préparé (ex. 'iris_001_001') ou chemin vers le dossier.",
     )
     p.add_argument(
         "--model",

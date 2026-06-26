@@ -20,9 +20,10 @@ DEFAULT_RANDOM_SEED = 42
 RUN_FOLDER_WIDTH = 3
 
 # Noms des fichiers de split produits par DataSplitter
-TRAIN_FILE = "train.csv"
-VAL_FILE   = "val.csv"
-TEST_FILE  = "test.csv"
+TRAIN_FILE   = "train.csv"
+VAL_FILE     = "val.csv"
+TEST_FILE    = "test.csv"
+PREPROC_FILE = "preprocessed.csv"
 
 # Optimisation d'hyperparamètres (Optuna TPE)
 DEFAULT_N_TRIALS   = 50

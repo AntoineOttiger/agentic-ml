@@ -5,6 +5,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+import logging
+
 import optuna
 from sklearn.metrics import f1_score
 
@@ -18,6 +20,8 @@ from agentic_ml.training.models import available_models, build_estimator
 from agentic_ml.training.search_space import suggest_params, validate_search_space
 
 optuna.logging.set_verbosity(optuna.logging.WARNING)
+
+logger = logging.getLogger("agentic_ml.optimizer")
 
 
 @dataclass
@@ -59,7 +63,7 @@ class HyperparameterOptimizer:
         """Lance l'optimisation TPE et retourne le meilleur résultat.
 
         Args:
-            prepared_run: identifiant ('001') ou chemin d'un run de `data/02_prepared`.
+            prepared_run: identifiant ('iris_001_001') ou chemin d'un run de `data/02_prepared`.
             model_type: nom du modèle (cf. `available_models()`).
             search_space: plages d'hyperparamètres (cf. `search_space` module).
             n_trials: nombre d'essais (défaut : valeur de l'instance).
@@ -80,6 +84,12 @@ class HyperparameterOptimizer:
         study.optimize(
             lambda trial: self._objective(trial, model_type, search_space, data),
             n_trials=n_trials,
+            callbacks=[
+                lambda _, trial: logger.info(
+                    "optuna | essai %d/%d — val_f1=%.4f",
+                    trial.number + 1, n_trials, trial.value if trial.value is not None else 0.0,
+                )
+            ],
         )
 
         # Réentraînement avec les meilleurs params pour obtenir train_f1 et eval_f1.
