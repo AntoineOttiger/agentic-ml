@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 
+from agentic_ml.config import MAX_N_TRIALS, MIN_N_TRIALS
 from agentic_ml.training.models import available_models
 
 from agentic_ml.agents.training_agent.state import AgentState
@@ -18,6 +19,11 @@ Avant chaque essai, tu formules UNE hypothèse explicite justifiant la configura
 choisie, en t'appuyant sur l'historique des essais (trial_log) et sur le budget restant. \
 Tu analyses l'écart train_f1 − eval_f1 comme signal d'overfitting : un écart important \
 indique de réduire la complexité (régularisation, profondeur) plutôt que de l'augmenter.
+
+Tu choisis aussi le nombre d'essais Optuna (n_trials) consacrés à chaque configuration, \
+dans l'intervalle [{MIN_N_TRIALS}, {MAX_N_TRIALS}]. Arbitre exploration vs coût : peu \
+d'essais pour débroussailler une piste incertaine, davantage pour affiner un candidat \
+prometteur ou un espace d'hyperparamètres large.
 
 Tu ne fais aucune transformation sur les données. Tu ne proposes que des hyperparamètres \
 présents dans le schéma du modèle choisi, en respectant leurs bornes."""
@@ -80,8 +86,9 @@ def build_context(state: AgentState) -> str:
 
     parts += [
         "",
-        "Propose le prochain essai : une hypothèse explicite, un model_type, et un "
-        "search_space (plages d'hyperparamètres) cohérent avec le schéma du modèle.",
+        "Propose le prochain essai : une hypothèse explicite, un model_type, un "
+        "search_space (plages d'hyperparamètres) cohérent avec le schéma du modèle, "
+        f"et un n_trials dans [{MIN_N_TRIALS}, {MAX_N_TRIALS}].",
     ]
     return "\n".join(parts)
 

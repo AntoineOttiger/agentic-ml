@@ -16,6 +16,7 @@ class Trial(TypedDict):
     hypothesis: str
     model_type: str
     hyperparameters: dict[str, Any]
+    n_trials: int
     train_f1: float
     eval_f1: float
     val_class_report: dict[str, Any]
@@ -42,8 +43,8 @@ class AgentState(TypedDict, total=False):
     epsilon: float
     patience: int
 
-    # Paramètres d'optimisation transmis à la pipeline
-    n_trials: int
+    # Paramètre d'optimisation transmis à la pipeline (n_trials est décidé par
+    # l'agent et propre à chaque expérience — cf. `Trial.n_trials`).
     seed: int
 
     # Mémoire de la recherche

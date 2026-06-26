@@ -10,6 +10,8 @@ from typing import Any, Literal, Optional
 
 from pydantic import BaseModel, Field
 
+from agentic_ml.config import MAX_N_TRIALS, MIN_N_TRIALS
+
 ModelType = Literal[
     "xgboost",
     "random_forest",
@@ -47,6 +49,13 @@ class Experiment(BaseModel):
     model_type: ModelType
     search_space: list[HyperparameterRange] = Field(
         description="Plages d'hyperparamètres à explorer pour ce modèle."
+    )
+    n_trials: int = Field(
+        description=(
+            f"Nombre d'essais Optuna pour cette config "
+            f"(borné [{MIN_N_TRIALS}, {MAX_N_TRIALS}] ; plus d'essais = "
+            f"recherche plus fine mais plus coûteuse)."
+        ),
     )
 
 

@@ -26,7 +26,9 @@ TEST_FILE    = "test.csv"
 PREPROC_FILE = "preprocessed.csv"
 
 # Optimisation d'hyperparamètres (Optuna TPE)
-DEFAULT_N_TRIALS   = 50
+# Bornes du garde-fou : l'agent choisit n_trials par expérience, clampé dans cet intervalle.
+MIN_N_TRIALS       = 1   # plancher : assez d'essais pour que TPE soit pertinent
+MAX_N_TRIALS       = 50  # plafond dur : coût Optuna / rate-limit
 DEFAULT_F1_AVERAGE = "macro"  # Iris multiclasse équilibré
 
 # Agent de recherche (LangGraph + Mistral)

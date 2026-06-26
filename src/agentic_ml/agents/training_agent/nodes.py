@@ -10,7 +10,7 @@ import logging
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_mistralai import ChatMistralAI
 
-from agentic_ml.config import AGENT_MODEL
+from agentic_ml.config import AGENT_MODEL, MAX_N_TRIALS, MIN_N_TRIALS
 from agentic_ml.utils.rate_limiter import MistralRateLimitCallback, get_rate_limiter
 
 from agentic_ml.agents.training_agent.prompts import (
@@ -47,6 +47,7 @@ def propose_experiment(state: AgentState, llm: ChatMistralAI) -> dict:
         "hypothesis": experiment.hypothesis,
         "model_type": experiment.model_type,
         "search_space": to_search_space(experiment.search_space),
+        "n_trials": experiment.n_trials,
     }
     logger.info(
         "propose | modèle=%s | hypothèse=%s", current["model_type"], current["hypothesis"]
@@ -57,11 +58,13 @@ def propose_experiment(state: AgentState, llm: ChatMistralAI) -> dict:
 def run_pipeline(state: AgentState) -> dict:
     """Valide et lance la pipeline pour la config proposée, met à jour la mémoire."""
     exp = state["current_experiment"]
+    # Garde-fou : la valeur choisie par l'agent est clampée dans les bornes config.
+    n_trials = max(MIN_N_TRIALS, min(MAX_N_TRIALS, exp["n_trials"]))
     result = launch_ml_pipeline(
         state["prepared_run"],
         exp["model_type"],
         exp["search_space"],
-        n_trials=state["n_trials"],
+        n_trials=n_trials,
         seed=state["seed"],
     )
 
@@ -74,6 +77,7 @@ def run_pipeline(state: AgentState) -> dict:
         "hypothesis": exp["hypothesis"],
         "model_type": exp["model_type"],
         "hyperparameters": result["best_hyperparams"],
+        "n_trials": n_trials,
         "train_f1": result["train_f1"],
         "eval_f1": result["eval_f1"],
         "val_class_report": result["val_class_report"],

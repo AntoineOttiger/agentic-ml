@@ -12,7 +12,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from agentic_ml.config import DEFAULT_N_TRIALS, DEFAULT_RANDOM_SEED
+from agentic_ml.config import DEFAULT_RANDOM_SEED, MAX_N_TRIALS
 
 
 def _to_python(obj: Any) -> Any:
@@ -80,7 +80,7 @@ def launch_ml_pipeline(
     model_type: str,
     search_space: dict[str, dict],
     *,
-    n_trials: int = DEFAULT_N_TRIALS,
+    n_trials: int = MAX_N_TRIALS,
     seed: int = DEFAULT_RANDOM_SEED,
 ) -> dict[str, Any]:
     """Lance la pipeline d'optimisation ML pour une config donnée.

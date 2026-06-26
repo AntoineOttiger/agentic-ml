@@ -1,16 +1,16 @@
 # Graph Report - agentic-ml  (2026-06-26)
 
 ## Corpus Check
-- 40 files · ~11,445 words
+- 40 files · ~11,582 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 287 nodes · 453 edges · 21 communities (17 shown, 4 thin omitted)
-- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 46 edges (avg confidence: 0.79)
+- 287 nodes · 457 edges · 21 communities (17 shown, 4 thin omitted)
+- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 47 edges (avg confidence: 0.79)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9f25b54b`
+- Built from commit: `65d5b56f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,12 +37,12 @@
 1. `MLPipelineState` - 14 edges
 2. `AgentState` - 14 edges
 3. `_apply_action()` - 9 edges
-4. `launch_ml_pipeline()` - 9 edges
-5. `HyperparameterOptimizer` - 9 edges
-6. `run_preproc_agent()` - 8 edges
-7. `agent_preprocessing()` - 8 edges
-8. `agent_feature_engineering()` - 8 edges
-9. `run_agent()` - 8 edges
+4. `run_agent()` - 9 edges
+5. `launch_ml_pipeline()` - 9 edges
+6. `HyperparameterOptimizer` - 9 edges
+7. `run_preproc_agent()` - 8 edges
+8. `agent_preprocessing()` - 8 edges
+9. `agent_feature_engineering()` - 8 edges
 10. `available_models()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -122,17 +122,17 @@ Nodes (15): DataSplitter, DataFrame, _column_profile(), _correlations(), _iqr_ou
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `to_search_space()` connect `Community 8` to `Community 0`, `Community 4`?**
-  _High betweenness centrality (0.126) - this node is a cross-community bridge._
 - **Why does `build_estimator()` connect `Community 1` to `Community 2`, `Community 4`, `Community 6`?**
-  _High betweenness centrality (0.121) - this node is a cross-community bridge._
+  _High betweenness centrality (0.116) - this node is a cross-community bridge._
+- **Why does `to_search_space()` connect `Community 8` to `Community 0`, `Community 4`?**
+  _High betweenness centrality (0.071) - this node is a cross-community bridge._
+- **Why does `launch_ml_pipeline()` connect `Community 7` to `Community 1`, `Community 2`, `Community 4`?**
+  _High betweenness centrality (0.068) - this node is a cross-community bridge._
 - **What connects `Entry point: split a preprocessed dataset into train/val/test partitions.`, `Entry point: lance une optimisation d'hyperparamètres (Optuna TPE) sur un run pr`, `Entry point: run the preprocessing / feature-engineering agent system.` to the rest of the system?**
-  _115 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _114 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.12105263157894737 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.09788359788359788 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.09885057471264368 - nodes in this community are weakly interconnected._
-- **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.11092436974789915 - nodes in this community are weakly interconnected._

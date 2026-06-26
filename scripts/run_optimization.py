@@ -12,8 +12,8 @@ if hasattr(sys.stdout, "reconfigure"):
 
 from agentic_ml.config import (
     DEFAULT_F1_AVERAGE,
-    DEFAULT_N_TRIALS,
     DEFAULT_RANDOM_SEED,
+    MAX_N_TRIALS,
 )
 from agentic_ml.training import HyperparameterOptimizer, available_models
 
@@ -46,7 +46,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--n-trials",
         type=int,
-        default=DEFAULT_N_TRIALS,
+        default=MAX_N_TRIALS,
         help="Nombre d'essais Optuna. Default: %(default)s",
     )
     p.add_argument(

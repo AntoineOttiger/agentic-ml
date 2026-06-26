@@ -73,7 +73,6 @@ def persist_results(state: AgentState, *, results_dir: Path = RESULTS_DIR) -> Pa
             "objective": state.get("objective"),
             "target_f1": state.get("target_f1"),
             "prepared_run": state.get("prepared_run"),
-            "n_trials": state.get("n_trials"),
             "seed": state.get("seed"),
         },
     )

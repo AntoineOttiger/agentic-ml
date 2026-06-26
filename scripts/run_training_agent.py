@@ -13,7 +13,6 @@ from dotenv import load_dotenv
 from agentic_ml.config import (
     AGENT_MODEL,
     DEFAULT_MAX_RUNS,
-    DEFAULT_N_TRIALS,
     DEFAULT_RANDOM_SEED,
     DEFAULT_TARGET_F1,
 )
@@ -47,12 +46,6 @@ def parse_args() -> argparse.Namespace:
         help="Mistral model id. Default: %(default)s",
     )
     p.add_argument(
-        "--n-trials",
-        type=int,
-        default=DEFAULT_N_TRIALS,
-        help="Optuna trials per pipeline run. Default: %(default)s",
-    )
-    p.add_argument(
         "--seed",
         type=int,
         default=DEFAULT_RANDOM_SEED,
@@ -76,7 +69,6 @@ def main() -> None:
         max_runs=args.max_runs,
         target_f1=args.target_f1,
         model=args.model,
-        n_trials=args.n_trials,
         seed=args.seed,
     )
 

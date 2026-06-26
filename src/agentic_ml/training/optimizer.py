@@ -12,8 +12,8 @@ from sklearn.metrics import classification_report, f1_score
 
 from agentic_ml.config import (
     DEFAULT_F1_AVERAGE,
-    DEFAULT_N_TRIALS,
     DEFAULT_RANDOM_SEED,
+    MAX_N_TRIALS,
 )
 from agentic_ml.training.dataset import PreparedData, load_prepared_run
 from agentic_ml.training.models import available_models, build_estimator
@@ -52,7 +52,7 @@ class HyperparameterOptimizer:
         *,
         f1_average: str = DEFAULT_F1_AVERAGE,
         random_seed: int = DEFAULT_RANDOM_SEED,
-        n_trials: int = DEFAULT_N_TRIALS,
+        n_trials: int = MAX_N_TRIALS,
     ) -> None:
         self.f1_average = f1_average
         self.random_seed = random_seed

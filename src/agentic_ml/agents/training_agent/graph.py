@@ -13,7 +13,6 @@ from agentic_ml.config import (
     CONVERGENCE_EPSILON,
     CONVERGENCE_PATIENCE,
     DEFAULT_MAX_RUNS,
-    DEFAULT_N_TRIALS,
     DEFAULT_RANDOM_SEED,
     DEFAULT_STOP_MODE,
     DEFAULT_TARGET_F1,
@@ -62,7 +61,6 @@ def run_agent(
     target_f1: float = DEFAULT_TARGET_F1,
     stop_mode: str = DEFAULT_STOP_MODE,
     model: str = AGENT_MODEL,
-    n_trials: int = DEFAULT_N_TRIALS,
     seed: int = DEFAULT_RANDOM_SEED,
     results_dir: Optional[Path] = None,
 ) -> AgentState:
@@ -88,7 +86,6 @@ def run_agent(
         "target_f1": target_f1,
         "epsilon": CONVERGENCE_EPSILON,
         "patience": CONVERGENCE_PATIENCE,
-        "n_trials": n_trials,
         "seed": seed,
         "trial_log": [],
         "best_trial": None,
