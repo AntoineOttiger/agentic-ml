@@ -2,6 +2,7 @@ from pathlib import Path
 
 PROJECT_ROOT  = Path(__file__).resolve().parents[2]
 RAW_DATA_DIR  = PROJECT_ROOT / "data" / "00_raw"
+PREPROC_DATA_DIR = PROJECT_ROOT / "data" / "01_preproc"
 PREP_DATA_DIR = PROJECT_ROOT / "data" / "02_prepared"
 RAW_IRIS_FILE = RAW_DATA_DIR / "Iris.csv"
 
@@ -34,3 +35,9 @@ DEFAULT_TARGET_F1     = 0.98    # seuil cible d'arrêt sur eval_f1
 CONVERGENCE_EPSILON   = 1e-3    # amélioration mini d'eval_f1 considérée significative
 CONVERGENCE_PATIENCE  = 3       # K : fenêtre d'essais pour le critère de convergence
 DEFAULT_STOP_MODE     = "convergence"  # "convergence" (déterministe) | "agent" (LLM décide)
+
+# Agents preprocessing / feature engineering (LangGraph + Mistral) — système isolé
+PREPROC_AGENT_MODEL     = AGENT_MODEL  # même modèle Mistral que l'agent de recherche
+DEFAULT_MAX_ITERATIONS  = 10           # garde-fou de la boucle de l'orchestrateur
+MAX_CODE_RETRIES        = 3            # tentatives de correction LLM sur erreur d'exécution
+MAX_CATEGORICAL_UNIQUES = 50           # cardinalité au-delà de laquelle on ne passe que le compte

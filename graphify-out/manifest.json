@@ -1,0 +1,217 @@
+{
+  ".claude/hooks/limit_csv_read.ps1": {
+    "mtime": 1782229983.4631333,
+    "ast_hash": "fcda2b81b9ae6746edaad69b09fdb4f0",
+    "semantic_hash": ""
+  },
+  ".claude/settings.json": {
+    "mtime": 1782401213.7115805,
+    "ast_hash": "1570ab75f07f6921d9a3c65015d74075",
+    "semantic_hash": ""
+  },
+  "configs/search_spaces/random_forest.json": {
+    "mtime": 1782308196.6408267,
+    "ast_hash": "2339b713cd809a25583ecd2476456c99",
+    "semantic_hash": ""
+  },
+  "configs/search_spaces/svm.json": {
+    "mtime": 1782308202.3091955,
+    "ast_hash": "5f5d01ba9c375260302d3f4b7377dd46",
+    "semantic_hash": ""
+  },
+  "configs/search_spaces/xgboost.json": {
+    "mtime": 1782308191.70668,
+    "ast_hash": "5deae222e0a3705c4f39a3c29ebd45c7",
+    "semantic_hash": ""
+  },
+  "scripts/prepare_data.py": {
+    "mtime": 1782409833.359184,
+    "ast_hash": "cad736218fc4e8357b47a1916a7e6efe",
+    "semantic_hash": ""
+  },
+  "scripts/run_agent.py": {
+    "mtime": 1782414672.179595,
+    "ast_hash": "5131f3fa284cd31e18a3a8b72d04b022",
+    "semantic_hash": ""
+  },
+  "scripts/run_optimization.py": {
+    "mtime": 1782309776.0916717,
+    "ast_hash": "124d3133d8a18ff889c652a348ec5d63",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/__init__.py": {
+    "mtime": 1782233574.1173444,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/__init__.py": {
+    "mtime": 1782461481.1586745,
+    "ast_hash": "5bb8dd9e2637879554f2682f0ae6480c",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/training_agent/__init__.py": {
+    "mtime": 1782412206.0657861,
+    "ast_hash": "b6c2336b65de676356c326522e76f0ee",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/training_agent/graph.py": {
+    "mtime": 1782414556.462912,
+    "ast_hash": "f5fd39152d6873ed3879a221291c2b27",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/training_agent/nodes.py": {
+    "mtime": 1782412312.686785,
+    "ast_hash": "0512d9b49c1e8c0128b0eaa14a5ad1a9",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/training_agent/profile.py": {
+    "mtime": 1782414557.7071373,
+    "ast_hash": "ff090ca6852a9c7df90c1a72f45b78ca",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/training_agent/prompts.py": {
+    "mtime": 1782412258.5449564,
+    "ast_hash": "23efbeba6e2a91043b8a09867faf579c",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/training_agent/results.py": {
+    "mtime": 1782412287.7974656,
+    "ast_hash": "c68ee76535a74901055234187172f605",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/training_agent/schema.py": {
+    "mtime": 1782412224.514055,
+    "ast_hash": "55d8902c96b06f31f8188ffe9a29feec",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/training_agent/state.py": {
+    "mtime": 1782412214.2851686,
+    "ast_hash": "3c794ac5985ca8f0f611fc58417cb6d7",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/training_agent/tools.py": {
+    "mtime": 1782412272.899408,
+    "ast_hash": "c833f172d36374eb1f815a11714de51b",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/config.py": {
+    "mtime": 1782461276.572082,
+    "ast_hash": "8797ed00293567ee16bdf98a5658b23d",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/data_manager/__init__.py": {
+    "mtime": 1782233575.1331377,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/data_manager/prepare_data.py": {
+    "mtime": 1782309400.157151,
+    "ast_hash": "d6fb5a723f15818cb92f4d98a8d4864e",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/mcp_server/__init__.py": {
+    "mtime": 1782402445.239985,
+    "ast_hash": "46b9df95b7adb4cf9506bf31aa2bd422",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/mcp_server/__main__.py": {
+    "mtime": 1782402446.7179506,
+    "ast_hash": "6d4d550df7b6cc8dc9b355ceee3756b0",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/mcp_server/client.py": {
+    "mtime": 1782402773.4632893,
+    "ast_hash": "b2e3fbb7ecce30e87cbb511171e427a7",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/mcp_server/server.py": {
+    "mtime": 1782412346.9940598,
+    "ast_hash": "405c50e83905d08ba343f3b4a4626165",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/training/__init__.py": {
+    "mtime": 1782308167.3994215,
+    "ast_hash": "6b2e6ec4f6f99b17f941407cde97a6fd",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/training/dataset.py": {
+    "mtime": 1782308138.7342079,
+    "ast_hash": "99f52a55ad0da5768cffd42f93caa339",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/training/models.py": {
+    "mtime": 1782315401.7143207,
+    "ast_hash": "a1e0f04ea1fca0e0864582158bc12547",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/training/optimizer.py": {
+    "mtime": 1782414555.4381151,
+    "ast_hash": "fc9da3a60ddafc8c64b4826697569464",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/training/search_space.py": {
+    "mtime": 1782308124.8279014,
+    "ast_hash": "f30abd04f0878948d9f7163625059161",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1782414553.9726286,
+    "ast_hash": "0e054131067da363cb1a9f39e0ab121a",
+    "semantic_hash": ""
+  },
+  "requirements.txt": {
+    "mtime": 1782402892.758827,
+    "ast_hash": "a056b8e20c03e459c8d8e47816a9da69",
+    "semantic_hash": ""
+  },
+  "scripts/run_preproc_agent.py": {
+    "mtime": 1782461496.1011968,
+    "ast_hash": "4dad057794e61fd357f36965dfd8fd9d",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/preproc_agent/__init__.py": {
+    "mtime": 1782461475.1566014,
+    "ast_hash": "0acb4d3caceecd600869a2dc9fbcf145",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/preproc_agent/graph.py": {
+    "mtime": 1782461464.4734974,
+    "ast_hash": "4463f2ec1ef0b9601dcb57669fba3291",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/preproc_agent/nodes.py": {
+    "mtime": 1782461414.1328158,
+    "ast_hash": "d3989464f14ecd5d025cd635f7417739",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/preproc_agent/profiling.py": {
+    "mtime": 1782461330.7834408,
+    "ast_hash": "a624d1c8a512318102934dc8fd140c42",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/preproc_agent/prompts.py": {
+    "mtime": 1782461384.76466,
+    "ast_hash": "ea6b250a1cb58a39b5b8314f1947b66f",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/preproc_agent/results.py": {
+    "mtime": 1782461444.8385556,
+    "ast_hash": "4c303890487ecef68f99eb0f9dd3191e",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/preproc_agent/sandbox.py": {
+    "mtime": 1782461294.845379,
+    "ast_hash": "d85aaea06fff422801e69ce0bf9b0490",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/preproc_agent/schema.py": {
+    "mtime": 1782461345.5671406,
+    "ast_hash": "2eeed7ec15e5bc109d3f36841c55f8d1",
+    "semantic_hash": ""
+  },
+  "src/agentic_ml/agents/preproc_agent/state.py": {
+    "mtime": 1782461287.1650896,
+    "ast_hash": "e8163f5a39103004fcaedfacf3a7f3b5",
+    "semantic_hash": ""
+  }
+}
