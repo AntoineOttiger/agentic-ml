@@ -31,7 +31,12 @@ class DataSplitter:
         random_seed: int = DEFAULT_RANDOM_SEED,
     ) -> None:
         self.preproc_run_dir = Path(preproc_run_dir)
-        self.source_path = self.preproc_run_dir / PREPROC_FILE
+        if self.preproc_run_dir.is_file():
+            self.source_path = self.preproc_run_dir
+            self._raw_input = True
+        else:
+            self.source_path = self.preproc_run_dir / PREPROC_FILE
+            self._raw_input = False
         self.output_dir = Path(output_dir)
         self.mode = mode
         self.test_size = test_size
@@ -42,8 +47,11 @@ class DataSplitter:
             raise ValueError(f"mode must be '2way' or '3way', got '{mode}'")
 
     def _next_run_folder(self) -> Path:
-        dataset_name, preproc_idx = self.preproc_run_dir.name.rsplit("_", 1)
-        prefix = f"{dataset_name}_{preproc_idx}_"
+        if self._raw_input:
+            prefix = f"{self.source_path.stem}_raw_"
+        else:
+            dataset_name, preproc_idx = self.preproc_run_dir.name.rsplit("_", 1)
+            prefix = f"{dataset_name}_{preproc_idx}_"
         existing = [
             int(p.name[len(prefix):])
             for p in self.output_dir.iterdir()
@@ -109,7 +117,7 @@ class DataSplitter:
         metadata = {
             "run_id": run_id,
             "created_at": datetime.now().isoformat(timespec="seconds"),
-            "preproc_run_id": self.preproc_run_dir.name,
+            "preproc_run_id": "raw" if self._raw_input else self.preproc_run_dir.name,
             "source_file": str(self.source_path.relative_to(PROJECT_ROOT)).replace("\\", "/"),
             "mode": self.mode,
             "random_seed": self.random_seed,

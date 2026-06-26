@@ -4,14 +4,144 @@
   "graph": {},
   "nodes": [
     {
+      "label": "schema.py",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "preproc_agent_schema",
+      "community": 8,
+      "norm_label": "schema.py"
+    },
+    {
+      "label": "ColumnReport",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_columnreport",
+      "community": 8,
+      "norm_label": "columnreport"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "id": "basemodel",
+      "community": 8,
+      "norm_label": "basemodel"
+    },
+    {
+      "label": "RecommendedAction",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_recommendedaction",
+      "community": 8,
+      "norm_label": "recommendedaction"
+    },
+    {
+      "label": ".flatten_columns()",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_recommendedaction_flatten_columns",
+      "community": 8,
+      "norm_label": ".flatten_columns()"
+    },
+    {
+      "label": "AnalysisReport",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_analysisreport",
+      "community": 8,
+      "norm_label": "analysisreport"
+    },
+    {
+      "label": "GeneratedCode",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L74",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_generatedcode",
+      "community": 8,
+      "norm_label": "generatedcode"
+    },
+    {
+      "label": "Mod\u00e8les Pydantic pour les sorties structur\u00e9es des agents preproc.  - `AnalysisRe",
+      "file_type": "rationale",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_rationale_1",
+      "community": 8,
+      "norm_label": "modeles pydantic pour les sorties structurees des agents preproc.  - `analysisre"
+    },
+    {
+      "label": "Diagnostic d'une colonne.",
+      "file_type": "rationale",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_rationale_15",
+      "community": 8,
+      "norm_label": "diagnostic d'une colonne."
+    },
+    {
+      "label": "Action recommand\u00e9e par l'Agent Analyse.",
+      "file_type": "rationale",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_rationale_29",
+      "community": 8,
+      "norm_label": "action recommandee par l'agent analyse."
+    },
+    {
+      "label": "Rapport structur\u00e9 de l'Agent Analyse (structure JSON de la spec).",
+      "file_type": "rationale",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_rationale_57",
+      "community": 8,
+      "norm_label": "rapport structure de l'agent analyse (structure json de la spec)."
+    },
+    {
+      "label": "Code Python g\u00e9n\u00e9r\u00e9 par un agent + libell\u00e9s des transformations effectu\u00e9es.",
+      "file_type": "rationale",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "preproc_agent_schema_rationale_75",
+      "community": 8,
+      "norm_label": "code python genere par un agent + libelles des transformations effectuees."
+    },
+    {
+      "label": "config.py",
+      "file_type": "code",
+      "source_file": "src/agentic_ml/config.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agentic_ml_config",
+      "community": 5,
+      "norm_label": "config.py"
+    },
+    {
       "label": "results.py",
       "file_type": "code",
       "source_file": "src/agentic_ml/agents/training_agent/results.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "training_agent_results",
       "community": 0,
-      "norm_label": "results.py"
+      "norm_label": "results.py",
+      "id": "training_agent_results"
     },
     {
       "label": "_write_json()",
@@ -19,9 +149,9 @@
       "source_file": "src/agentic_ml/agents/training_agent/results.py",
       "source_location": "L29",
       "_origin": "ast",
-      "id": "training_agent_results_write_json",
       "community": 0,
-      "norm_label": "_write_json()"
+      "norm_label": "_write_json()",
+      "id": "training_agent_results_write_json"
     },
     {
       "label": "Path",
@@ -29,9 +159,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "path",
       "community": 9,
-      "norm_label": "path"
+      "norm_label": "path",
+      "id": "path"
     },
     {
       "label": "_save_best_model()",
@@ -39,9 +169,9 @@
       "source_file": "src/agentic_ml/agents/training_agent/results.py",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "training_agent_results_save_best_model",
       "community": 0,
-      "norm_label": "_save_best_model()"
+      "norm_label": "_save_best_model()",
+      "id": "training_agent_results_save_best_model"
     },
     {
       "label": "AgentState",
@@ -49,9 +179,9 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "id": "agentstate",
       "community": 0,
-      "norm_label": "agentstate"
+      "norm_label": "agentstate",
+      "id": "agentstate"
     },
     {
       "label": "persist_results()",
@@ -59,9 +189,9 @@
       "source_file": "src/agentic_ml/agents/training_agent/results.py",
       "source_location": "L58",
       "_origin": "ast",
-      "id": "training_agent_results_persist_results",
       "community": 0,
-      "norm_label": "persist_results()"
+      "norm_label": "persist_results()",
+      "id": "training_agent_results_persist_results"
     },
     {
       "label": "Persistance d'une run d'agent : trial_log, r\u00e9sum\u00e9 et best model.  \u00c9crit dans `re",
@@ -69,9 +199,9 @@
       "source_file": "src/agentic_ml/agents/training_agent/results.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "training_agent_results_rationale_1",
       "community": 0,
-      "norm_label": "persistance d'une run d'agent : trial_log, resume et best model.  ecrit dans `re"
+      "norm_label": "persistance d'une run d'agent : trial_log, resume et best model.  ecrit dans `re",
+      "id": "training_agent_results_rationale_1"
     },
     {
       "label": "R\u00e9entra\u00eene le best model sur le train et le s\u00e9rialise avec son encodeur.",
@@ -79,9 +209,9 @@
       "source_file": "src/agentic_ml/agents/training_agent/results.py",
       "source_location": "L34",
       "_origin": "ast",
-      "id": "training_agent_results_rationale_34",
       "community": 0,
-      "norm_label": "reentraine le best model sur le train et le serialise avec son encodeur."
+      "norm_label": "reentraine le best model sur le train et le serialise avec son encodeur.",
+      "id": "training_agent_results_rationale_34"
     },
     {
       "label": "\u00c9crit les artefacts de la run et renvoie le dossier cr\u00e9\u00e9.",
@@ -89,9 +219,9 @@
       "source_file": "src/agentic_ml/agents/training_agent/results.py",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "training_agent_results_rationale_59",
       "community": 0,
-      "norm_label": "ecrit les artefacts de la run et renvoie le dossier cree."
+      "norm_label": "ecrit les artefacts de la run et renvoie le dossier cree.",
+      "id": "training_agent_results_rationale_59"
     },
     {
       "label": "SKILL.md",
@@ -249,7 +379,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "norm_label": "graph.py",
       "id": "preproc_agent_graph"
     },
@@ -259,7 +389,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "norm_label": "build_preproc_graph()",
       "id": "preproc_agent_graph_build_preproc_graph"
     },
@@ -269,7 +399,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 4,
+      "community": 0,
       "norm_label": "chatmistralai",
       "id": "chatmistralai"
     },
@@ -279,7 +409,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L59",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "norm_label": "run_preproc_agent()",
       "id": "preproc_agent_graph_run_preproc_agent"
     },
@@ -289,7 +419,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "norm_label": "mlpipelinestate",
       "id": "mlpipelinestate"
     },
@@ -299,7 +429,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "norm_label": "assemblage du stategraph et point d'entree `run_preproc_agent`.  flux : analyse",
       "id": "preproc_agent_graph_rationale_1"
     },
@@ -309,7 +439,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "norm_label": "construit et compile le graphe de la boucle de preprocessing.",
       "id": "preproc_agent_graph_rationale_36"
     },
@@ -319,19 +449,9 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
       "source_location": "L68",
       "_origin": "ast",
-      "community": 7,
+      "community": 5,
       "norm_label": "execute la boucle de preprocessing de bout en bout et renvoie l'etat final.",
       "id": "preproc_agent_graph_rationale_68"
-    },
-    {
-      "label": "config.py",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/config.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "config.py",
-      "id": "agentic_ml_config"
     },
     {
       "label": "CLAUDE.md",
@@ -549,7 +669,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/nodes.py",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 20,
+      "community": 0,
       "norm_label": "make_llm()",
       "id": "training_agent_nodes_make_llm"
     },
@@ -629,7 +749,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/nodes.py",
       "source_location": "L33",
       "_origin": "ast",
-      "community": 20,
+      "community": 0,
       "norm_label": "instancie le client mistral avec rate limiting (cle lue dans mistral_api_key).",
       "id": "training_agent_nodes_rationale_33"
     },
@@ -699,7 +819,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/profile.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "profile.py",
       "id": "training_agent_profile"
     },
@@ -709,7 +829,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/profile.py",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "latest_prepared_run()",
       "id": "training_agent_profile_latest_prepared_run"
     },
@@ -719,7 +839,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/profile.py",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "build_dataset_profile()",
       "id": "training_agent_profile_build_dataset_profile"
     },
@@ -739,7 +859,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/profile.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "resolution du run de donnees et construction du profil de dataset.  le profil es",
       "id": "training_agent_profile_rationale_1"
     },
@@ -749,7 +869,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/profile.py",
       "source_location": "L19",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "renvoie l'identifiant du run le plus recent de `data/02_prepared/`.      s'appui",
       "id": "training_agent_profile_rationale_19"
     },
@@ -759,7 +879,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/profile.py",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "norm_label": "construit le profil complet d'un run en un seul appel.      combine `metadata.js",
       "id": "training_agent_profile_rationale_43"
     },
@@ -849,7 +969,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "client.py",
       "id": "mcp_server_client"
     },
@@ -859,7 +979,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "mcptoolclient",
       "id": "mcp_server_client_mcptoolclient"
     },
@@ -869,7 +989,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L32",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": ".__init__()",
       "id": "mcp_server_client_mcptoolclient_init"
     },
@@ -879,7 +999,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": ".__enter__()",
       "id": "mcp_server_client_mcptoolclient_enter"
     },
@@ -889,7 +1009,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": ".__exit__()",
       "id": "mcp_server_client_mcptoolclient_exit"
     },
@@ -899,7 +1019,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L57",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "._run()",
       "id": "mcp_server_client_mcptoolclient_run"
     },
@@ -909,7 +1029,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": ".call_tool()",
       "id": "mcp_server_client_mcptoolclient_call_tool"
     },
@@ -919,7 +1039,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "client mcp synchrone pour les outils ml de l'agent.  wrapping synchrone du clien",
       "id": "mcp_server_client_rationale_1"
     },
@@ -929,7 +1049,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L25",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "context manager synchrone autour d'une session mcp stdio.      usage:         wi",
       "id": "mcp_server_client_rationale_25"
     },
@@ -939,7 +1059,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "coroutine principal : ouvre la connexion, signale 'ready', attend 'stop'.",
       "id": "mcp_server_client_rationale_58"
     },
@@ -949,7 +1069,7 @@
       "source_file": "src/agentic_ml/mcp_server/client.py",
       "source_location": "L79",
       "_origin": "ast",
-      "community": 0,
+      "community": 7,
       "norm_label": "appelle un outil mcp et retourne le resultat deserialise.          timeout de 30",
       "id": "mcp_server_client_rationale_79"
     },
@@ -1379,7 +1499,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "profiling.py",
       "id": "preproc_agent_profiling"
     },
@@ -1389,7 +1509,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L27",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "_column_profile()",
       "id": "preproc_agent_profiling_column_profile"
     },
@@ -1399,7 +1519,7 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "series",
       "id": "series"
     },
@@ -1409,7 +1529,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "_iqr_outliers()",
       "id": "preproc_agent_profiling_iqr_outliers"
     },
@@ -1419,7 +1539,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L90",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "_correlations()",
       "id": "preproc_agent_profiling_correlations"
     },
@@ -1429,7 +1549,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L121",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "profile_dataframe()",
       "id": "preproc_agent_profiling_profile_dataframe"
     },
@@ -1439,7 +1559,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "profilage d'un dataframe en statistiques agregees (sans donnees brutes).  l'agen",
       "id": "preproc_agent_profiling_rationale_1"
     },
@@ -1449,7 +1569,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "profil d'une colonne : type, nulls, cardinalite, distribution, issues.",
       "id": "preproc_agent_profiling_rationale_28"
     },
@@ -1459,7 +1579,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L79",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "detection d'outliers par la methode iqr. renvoie ``(presence, nombre)``.",
       "id": "preproc_agent_profiling_rationale_79"
     },
@@ -1469,7 +1589,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L91",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "correlations numeriques : paires fortement correlees + correlation a la target.",
       "id": "preproc_agent_profiling_rationale_91"
     },
@@ -1479,7 +1599,7 @@
       "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
       "source_location": "L122",
       "_origin": "ast",
-      "community": 4,
+      "community": 22,
       "norm_label": "construit le profil statistique complet du dataframe.      args:         df: dat",
       "id": "preproc_agent_profiling_rationale_122"
     },
@@ -1724,116 +1844,6 @@
       "id": "preproc_agent_sandbox_rationale_14"
     },
     {
-      "label": "schema.py",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "schema.py",
-      "id": "preproc_agent_schema"
-    },
-    {
-      "label": "ColumnReport",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "columnreport",
-      "id": "preproc_agent_schema_columnreport"
-    },
-    {
-      "label": "BaseModel",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "basemodel",
-      "id": "basemodel"
-    },
-    {
-      "label": "RecommendedAction",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "recommendedaction",
-      "id": "preproc_agent_schema_recommendedaction"
-    },
-    {
-      "label": "AnalysisReport",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L43",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "analysisreport",
-      "id": "preproc_agent_schema_analysisreport"
-    },
-    {
-      "label": "GeneratedCode",
-      "file_type": "code",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L61",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "generatedcode",
-      "id": "preproc_agent_schema_generatedcode"
-    },
-    {
-      "label": "Mod\u00e8les Pydantic pour les sorties structur\u00e9es des agents preproc.  - `AnalysisRe",
-      "file_type": "rationale",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "modeles pydantic pour les sorties structurees des agents preproc.  - `analysisre",
-      "id": "preproc_agent_schema_rationale_1"
-    },
-    {
-      "label": "Diagnostic d'une colonne.",
-      "file_type": "rationale",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "diagnostic d'une colonne.",
-      "id": "preproc_agent_schema_rationale_15"
-    },
-    {
-      "label": "Action recommand\u00e9e par l'Agent Analyse.",
-      "file_type": "rationale",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "action recommandee par l'agent analyse.",
-      "id": "preproc_agent_schema_rationale_29"
-    },
-    {
-      "label": "Rapport structur\u00e9 de l'Agent Analyse (structure JSON de la spec).",
-      "file_type": "rationale",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L44",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "rapport structure de l'agent analyse (structure json de la spec).",
-      "id": "preproc_agent_schema_rationale_44"
-    },
-    {
-      "label": "Code Python g\u00e9n\u00e9r\u00e9 par un agent + libell\u00e9s des transformations effectu\u00e9es.",
-      "file_type": "rationale",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L62",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "code python genere par un agent + libelles des transformations effectuees.",
-      "id": "preproc_agent_schema_rationale_62"
-    },
-    {
       "label": "state.py",
       "file_type": "code",
       "source_file": "src/agentic_ml/agents/preproc_agent/state.py",
@@ -1909,7 +1919,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/graph.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "norm_label": "graph.py",
       "id": "training_agent_graph"
     },
@@ -1919,7 +1929,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/graph.py",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "norm_label": "build_agent_graph()",
       "id": "training_agent_graph_build_agent_graph"
     },
@@ -1929,7 +1939,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/graph.py",
       "source_location": "L58",
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "norm_label": "run_agent()",
       "id": "training_agent_graph_run_agent"
     },
@@ -1939,7 +1949,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/graph.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "norm_label": "assemblage du stategraph et point d'entree `run_agent`.",
       "id": "training_agent_graph_rationale_1"
     },
@@ -1949,7 +1959,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/graph.py",
       "source_location": "L36",
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "norm_label": "construit et compile le graphe de la boucle de recherche.      flux : propose_ex",
       "id": "training_agent_graph_rationale_36"
     },
@@ -1959,7 +1969,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/graph.py",
       "source_location": "L69",
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "norm_label": "execute la boucle agentique de bout en bout et renvoie l'etat final.      args:",
       "id": "training_agent_graph_rationale_69"
     },
@@ -2209,7 +2219,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/tools.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "tools.py",
       "id": "training_agent_tools"
     },
@@ -2229,7 +2239,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/tools.py",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "get_model_schema()",
       "id": "training_agent_tools_get_model_schema"
     },
@@ -2239,7 +2249,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/tools.py",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "_validate()",
       "id": "training_agent_tools_validate"
     },
@@ -2249,7 +2259,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/tools.py",
       "source_location": "L63",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "launch_ml_pipeline()",
       "id": "training_agent_tools_launch_ml_pipeline"
     },
@@ -2259,7 +2269,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/tools.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "tools de l'agent (fonctions pures).  trois des quatre tools decrits dans `agenti",
       "id": "training_agent_tools_rationale_1"
     },
@@ -2279,7 +2289,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/tools.py",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "renvoie le schema type des hyperparametres valides d'un modele.",
       "id": "training_agent_tools_rationale_29"
     },
@@ -2289,7 +2299,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/tools.py",
       "source_location": "L43",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "valide modele, structure et noms d'hyperparametres. renvoie une erreur ou none.",
       "id": "training_agent_tools_rationale_43"
     },
@@ -2299,7 +2309,7 @@
       "source_file": "src/agentic_ml/agents/training_agent/tools.py",
       "source_location": "L71",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "lance la pipeline d'optimisation ml pour une config donnee.      valide les hype",
       "id": "training_agent_tools_rationale_71"
     },
@@ -2469,7 +2479,7 @@
       "source_file": "src/agentic_ml/training/models.py",
       "source_location": "L29",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "modelspec",
       "id": "training_models_modelspec"
     },
@@ -2659,7 +2669,7 @@
       "source_file": "src/agentic_ml/training/models.py",
       "source_location": "L215",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "available_models()",
       "id": "training_models_available_models"
     },
@@ -2669,7 +2679,7 @@
       "source_file": "src/agentic_ml/training/models.py",
       "source_location": "L220",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "get_model_spec()",
       "id": "training_models_get_model_spec"
     },
@@ -2699,7 +2709,7 @@
       "source_file": "src/agentic_ml/training/models.py",
       "source_location": "L30",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "description d'un modele pris en charge.      attributes:         builder: fabriq",
       "id": "training_models_rationale_30"
     },
@@ -2709,7 +2719,7 @@
       "source_file": "src/agentic_ml/training/models.py",
       "source_location": "L216",
       "_origin": "ast",
-      "community": 2,
+      "community": 6,
       "norm_label": "noms des modeles enregistres.",
       "id": "training_models_rationale_216"
     },
@@ -2996,6 +3006,319 @@
   ],
   "links": [
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema",
+      "target": "preproc_agent_schema_analysisreport"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema",
+      "target": "preproc_agent_schema_columnreport"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema",
+      "target": "preproc_agent_schema_generatedcode"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema",
+      "target": "preproc_agent_schema_recommendedaction"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema_rationale_1",
+      "target": "preproc_agent_schema"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema_columnreport",
+      "target": "basemodel"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema_rationale_15",
+      "target": "preproc_agent_schema_columnreport"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema_analysisreport",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema_generatedcode",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema_recommendedaction",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/schema.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_schema_experiment",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/schema.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_schema_hyperparameterrange",
+      "target": "basemodel"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/schema.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_schema_stopdecision",
+      "target": "basemodel"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_schema_rationale_29",
+      "target": "preproc_agent_schema_recommendedaction"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "preproc_agent_schema_recommendedaction",
+      "target": "preproc_agent_schema_recommendedaction_flatten_columns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "preproc_agent_schema_rationale_57",
+      "target": "preproc_agent_schema_analysisreport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "preproc_agent_schema_rationale_75",
+      "target": "preproc_agent_schema_generatedcode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "data_manager_prepare_data",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/mcp_server/server.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "mcp_server_server",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_graph",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/nodes.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_nodes",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_profiling",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/preproc_agent/results.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "preproc_agent_results",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/prepare_data.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_prepare_data",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/run_optimization.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_run_optimization",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/run_preproc_agent.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_run_preproc_agent",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/run_training_agent.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_run_training_agent",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/graph.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_graph",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/nodes.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_nodes",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/profile.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_profile",
+      "target": "agentic_ml_config"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -3004,6 +3327,50 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "training_agent_results",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/agents/training_agent/tools.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_agent_tools",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/training/dataset.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_dataset",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/training/optimizer.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "training_optimizer",
+      "target": "agentic_ml_config"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/agentic_ml/utils/rate_limiter.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "utils_rate_limiter",
       "target": "agentic_ml_config"
     },
     {
@@ -3294,9 +3661,9 @@
       "source_file": "src/agentic_ml/agents/training_agent/results.py",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "training_agent_results_save_best_model",
-      "target": "agentstate",
-      "confidence_score": 1.0
+      "target": "agentstate"
     },
     {
       "relation": "references",
@@ -3404,9 +3771,9 @@
       "source_file": "src/agentic_ml/agents/training_agent/results.py",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "training_agent_results_persist_results",
-      "target": "agentstate",
-      "confidence_score": 1.0
+      "target": "agentstate"
     },
     {
       "relation": "references",
@@ -3520,17 +3887,6 @@
       "target": "eda_skill_\u00e9tape_6_confirmer"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/run_preproc_agent.py",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_run_preproc_agent",
-      "target": "agentic_ml_config"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scripts/run_preproc_agent.py",
@@ -3625,17 +3981,6 @@
       "weight": 1.0,
       "source": "scripts_run_preproc_agent_main",
       "target": "preproc_agent_graph_run_preproc_agent"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/graph.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_graph",
-      "target": "agentic_ml_config"
     },
     {
       "relation": "contains",
@@ -3862,171 +4207,6 @@
       "confidence_score": 1.0,
       "source": "preproc_agent_graph_run_preproc_agent",
       "target": "preproc_agent_state_mlpipelinestate"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/data_manager/prepare_data.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "data_manager_prepare_data",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/mcp_server/server.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "mcp_server_server",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/nodes.py",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_nodes",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/profiling.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_profiling",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/results.py",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_results",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/prepare_data.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_prepare_data",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/run_optimization.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_run_optimization",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "scripts/run_training_agent.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "scripts_run_training_agent",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/graph.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_graph",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/nodes.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_nodes",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/profile.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_profile",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/tools.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_tools",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/training/dataset.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_dataset",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/training/optimizer.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_optimizer",
-      "target": "agentic_ml_config"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/utils/rate_limiter.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "utils_rate_limiter",
-      "target": "agentic_ml_config"
     },
     {
       "relation": "contains",
@@ -6477,166 +6657,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema",
-      "target": "preproc_agent_schema_analysisreport"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema",
-      "target": "preproc_agent_schema_columnreport"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema",
-      "target": "preproc_agent_schema_generatedcode"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema",
-      "target": "preproc_agent_schema_recommendedaction"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema_rationale_1",
-      "target": "preproc_agent_schema"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema_columnreport",
-      "target": "basemodel"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema_rationale_15",
-      "target": "preproc_agent_schema_columnreport"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema_analysisreport",
-      "target": "basemodel"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L61",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema_generatedcode",
-      "target": "basemodel"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema_recommendedaction",
-      "target": "basemodel"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/schema.py",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_schema_experiment",
-      "target": "basemodel"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/schema.py",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_schema_hyperparameterrange",
-      "target": "basemodel"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/training_agent/schema.py",
-      "source_location": "L53",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "training_agent_schema_stopdecision",
-      "target": "basemodel"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema_rationale_29",
-      "target": "preproc_agent_schema_recommendedaction"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema_rationale_44",
-      "target": "preproc_agent_schema_analysisreport"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "src/agentic_ml/agents/preproc_agent/schema.py",
-      "source_location": "L62",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "preproc_agent_schema_rationale_62",
-      "target": "preproc_agent_schema_generatedcode"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/agentic_ml/agents/preproc_agent/state.py",
       "source_location": "L15",
       "weight": 1.0,
@@ -7962,5 +7982,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a3295f1e246544529fd114f07bc3cffd6206f14a"
+  "built_at_commit": "8e1b34009210ae00ee6ddf1339add01ed4a05fba"
 }

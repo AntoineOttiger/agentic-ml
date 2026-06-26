@@ -11,26 +11,26 @@ from agentic_ml.config import (
     DEFAULT_RANDOM_SEED,
     DEFAULT_TEST_SIZE,
     PREPROC_DATA_DIR,
+    PROJECT_ROOT,
     RUN_FOLDER_WIDTH,
 )
 from agentic_ml.data_manager.prepare_data import DataSplitter
 
 
 def _latest_preproc_run() -> Path:
-    candidates: list[tuple[int, Path]] = []
+    candidates: list[Path] = []
     if PREPROC_DATA_DIR.is_dir():
         for p in PREPROC_DATA_DIR.iterdir():
             if not p.is_dir() or "_" not in p.name:
                 continue
-            suffix = p.name.rsplit("_", 1)[1]
-            if suffix.isdigit():
-                candidates.append((int(suffix), p))
+            if p.name.rsplit("_", 1)[1].isdigit():
+                candidates.append(p)
     if not candidates:
         raise FileNotFoundError(
             f"Aucun run préprocessé dans {PREPROC_DATA_DIR}. "
             "Lancez d'abord le preproc_agent."
         )
-    return max(candidates)[1]
+    return max(candidates, key=lambda p: p.stat().st_mtime)
 
 
 def _resolve_preproc_run(value: str | None) -> Path:
@@ -38,7 +38,14 @@ def _resolve_preproc_run(value: str | None) -> Path:
         return _latest_preproc_run()
     p = Path(value)
     if p.is_absolute():
+        if not p.exists():
+            raise FileNotFoundError(f"Introuvable : {p}")
         return p
+    if p.suffix.lower() == ".csv":
+        resolved = PROJECT_ROOT / p
+        if resolved.is_file():
+            return resolved
+        raise FileNotFoundError(f"Fichier CSV introuvable : {p}")
     if (PREPROC_DATA_DIR / p).is_dir():
         return PREPROC_DATA_DIR / p
     raise FileNotFoundError(f"Run preproc introuvable : {value}")
@@ -51,9 +58,9 @@ def parse_args() -> argparse.Namespace:
     p.add_argument(
         "--preproc-run",
         default=None,
-        metavar="RUN_ID",
-        help="ID du run preproc à utiliser (ex. iris_001). "
-             "Par défaut : dernier run détecté dans data/01_preproc/.",
+        metavar="RUN_OR_CSV",
+        help="Run preproc à utiliser (ex. iris_001) ou chemin vers un fichier CSV quelconque. "
+             "Par défaut : run le plus récent dans data/01_preproc/.",
     )
     p.add_argument(
         "--mode",
