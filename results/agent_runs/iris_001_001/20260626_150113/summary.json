@@ -1,0 +1,24 @@
+{
+  "best_trial": {
+    "run_id": 1,
+    "hypothesis": "Le dataset iris est un problème de classification simple mais avec un petit nombre d'échantillons (87). Un modèle `hist_gradient_boosting` est adapté car il est robuste à l'overfitting grâce à sa régularisation intégrée (L2) et son approche par histogrammes. Pour maximiser le eval_f1, je commence avec une configuration peu complexe : une profondeur maximale faible (3-6) pour éviter l'overfitting, un taux d'apprentissage modéré (0.01-0.1) pour une convergence stable, et une régularisation L2 (0.0-0.5) pour pénaliser les poids trop grands. Le nombre d'itérations (100-300) est choisi pour éviter un sur-entraînement tout en permettant une bonne convergence.",
+    "model_type": "hist_gradient_boosting",
+    "hyperparameters": {
+      "max_iter": 130,
+      "max_depth": 3,
+      "learning_rate": 0.011430983876313222,
+      "l2_regularization": 0.4330880728874676
+    },
+    "train_f1": 0.965945165945166,
+    "eval_f1": 0.9333333333333332
+  },
+  "runs_used": 4,
+  "max_runs": 10,
+  "stop_mode": "convergence",
+  "stop_reason": "convergence (gain < 0.001 sur 3 essais)",
+  "objective": "maximize eval_f1",
+  "target_f1": 0.98,
+  "prepared_run": "iris_001_001",
+  "n_trials": 50,
+  "seed": 42
+}

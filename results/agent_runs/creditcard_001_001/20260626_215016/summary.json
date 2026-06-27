@@ -1,0 +1,51 @@
+{
+  "best_trial": {
+    "run_id": 2,
+    "hypothesis": "Le premier essai avec HistGradientBoosting a révélé un overfitting (train_f1=0.9938 vs eval_f1=0.9252). Pour réduire cet écart, je propose de réduire la complexité du modèle en limitant max_depth (4-6) et en augmentant la régularisation L2 (0.1-1.0). Un learning_rate plus faible (0.001-0.05) et un max_iter plus élevé (200-400) permettront une convergence plus stable et progressive, ciblant spécifiquement l'amélioration du F1-score pour la classe minoritaire (actuellement 0.8506). L'objectif est de minimiser l'écart train_f1 - eval_f1 tout en maximisant eval_f1, en exploitant la robustesse de HistGradientBoosting face au déséquilibre des classes.",
+    "model_type": "hist_gradient_boosting",
+    "hyperparameters": {
+      "max_iter": 220,
+      "max_depth": 6,
+      "learning_rate": 0.03532578108385455,
+      "l2_regularization": 0.8371737862695309
+    },
+    "n_trials": 30,
+    "train_f1": 0.980912330588404,
+    "eval_f1": 0.9276335038023984,
+    "val_class_report": {
+      "0": {
+        "precision": 0.9996411333010353,
+        "recall": 0.9999102591715127,
+        "f1-score": 0.999775678125028,
+        "support": 55716.0
+      },
+      "1": {
+        "precision": 0.9367088607594937,
+        "recall": 0.7872340425531915,
+        "f1-score": 0.8554913294797688,
+        "support": 94.0
+      },
+      "accuracy": 0.9995520516036552,
+      "macro avg": {
+        "precision": 0.9681749970302644,
+        "recall": 0.8935721508623521,
+        "f1-score": 0.9276335038023984,
+        "support": 55810.0
+      },
+      "weighted avg": {
+        "precision": 0.9995351373573172,
+        "recall": 0.9995520516036552,
+        "f1-score": 0.9995326620208773,
+        "support": 55810.0
+      }
+    }
+  },
+  "runs_used": 5,
+  "max_runs": 10,
+  "stop_mode": "convergence",
+  "stop_reason": "convergence (gain < 0.001 sur 3 essais)",
+  "objective": "maximize eval_f1",
+  "target_f1": 0.98,
+  "prepared_run": "creditcard_001_001",
+  "seed": 42
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "run_id": 1,
+    "hypothesis": "Le dataset iris est un problème de classification simple mais avec un petit nombre d'échantillons (87). Un modèle `hist_gradient_boosting` est adapté car il est robuste à l'overfitting grâce à sa régularisation intégrée (L2) et son approche par histogrammes. Pour maximiser le eval_f1, je commence avec une configuration peu complexe : une profondeur maximale faible (3-6) pour éviter l'overfitting, un taux d'apprentissage modéré (0.01-0.1) pour une convergence stable, et une régularisation L2 (0.0-0.5) pour pénaliser les poids trop grands. Le nombre d'itérations (100-300) est choisi pour éviter un sur-entraînement tout en permettant une bonne convergence.",
+    "model_type": "hist_gradient_boosting",
+    "hyperparameters": {
+      "max_iter": 130,
+      "max_depth": 3,
+      "learning_rate": 0.011430983876313222,
+      "l2_regularization": 0.4330880728874676
+    },
+    "train_f1": 0.965945165945166,
+    "eval_f1": 0.9333333333333332
+  },
+  {
+    "run_id": 2,
+    "hypothesis": "Le premier essai avec `hist_gradient_boosting` a montré un léger overfitting (train_f1 − eval_f1 = 0.0326). Pour améliorer le eval_f1, je réduis la complexité du modèle en diminuant `max_depth` (2-4) pour limiter la capacité d'apprentissage, en augmentant `l2_regularization` (0.5-1.0) pour pénaliser les poids trop grands, et en réduisant `max_iter` (50-150) pour éviter un entraînement excessif. Le `learning_rate` est ajusté à une valeur faible (0.001-0.05) pour une convergence stable. Ces ajustements devraient réduire l'écart train_eval et améliorer la généralisation.",
+    "model_type": "hist_gradient_boosting",
+    "hyperparameters": {
+      "max_iter": 90,
+      "max_depth": 4,
+      "learning_rate": 0.01752410111812814,
+      "l2_regularization": 0.7993292420985183
+    },
+    "train_f1": 0.965945165945166,
+    "eval_f1": 0.9333333333333332
+  },
+  {
+    "run_id": 3,
+    "hypothesis": "Le dataset iris est un problème de classification simple avec un petit nombre d'échantillons (87) et trois classes bien distinctes. Les deux essais précédents avec `hist_gradient_boosting` ont montré un overfitting modéré (train_f1 − eval_f1 ≈ 0.0326), malgré une régularisation L2 et une réduction de la complexité. Pour maximiser le eval_f1, je propose de changer pour un modèle `extra_trees`, qui est une variante des forêts aléatoires avec une meilleure robustesse à l'overfitting grâce à des splits aléatoires et une réduction de la variance. Ce modèle est particulièrement adapté aux petits datasets. Je réduis la complexité en limitant `max_depth` (2-6), en augmentant `min_samples_split` (5-10) et `min_samples_leaf` (2-5), et en choisissant `max_features=\"sqrt\"` pour limiter la variance. Le nombre d'estimateurs (`n_estimators` entre 200 et 500) est augmenté pour compenser la réduction de complexité par la diversité des arbres. Cette configuration devrait améliorer la généralisation (eval_f1) en réduisant l'écart train_f1 − eval_f1.",
+    "model_type": "extra_trees",
+    "hyperparameters": {
+      "n_estimators": 300,
+      "max_depth": 6,
+      "min_samples_split": 9,
+      "min_samples_leaf": 4,
+      "max_features": "sqrt"
+    },
+    "train_f1": 0.9434378295465441,
+    "eval_f1": 0.9333333333333332
+  },
+  {
+    "run_id": 4,
+    "hypothesis": "Le dataset iris est un problème de classification linéairement séparable, surtout pour la classe *setosa*. Un modèle SVM avec un noyau linéaire est le plus adapté pour maximiser le eval_f1, car il exploite cette séparabilité sans risque d'overfitting lié à des noyaux non linéaires. La régularisation via `C` doit être ajustée pour éviter un sous-apprentissage (C trop faible) ou un surapprentissage (C trop élevé). Une valeur de `C` autour de 1.0 est typiquement optimale pour ce type de problème. Le `gamma` est désactivé pour un noyau linéaire, donc seul `C` est optimisé dans ce run.",
+    "model_type": "svm",
+    "hyperparameters": {
+      "C": 0.20513382630874505,
+      "kernel": "linear",
+      "gamma": 0.00020511104188433984
+    },
+    "train_f1": 0.9546850998463903,
+    "eval_f1": 0.9333333333333332
+  }
+]

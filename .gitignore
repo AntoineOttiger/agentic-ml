@@ -1,7 +1,5 @@
 /data/
 /agentic_ml/
-results/
-notes/
 .env
 __pycache__/
 *.pyc

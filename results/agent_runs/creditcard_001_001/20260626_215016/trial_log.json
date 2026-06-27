@@ -1,0 +1,210 @@
+[
+  {
+    "run_id": 1,
+    "hypothesis": "Le dataset est fortement déséquilibré (classe minoritaire < 0.2%), ce qui nécessite un modèle robuste à ce problème. HistGradientBoosting est une bonne candidate car il gère intrinsèquement le déséquilibre et permet de contrôler la complexité via la régularisation L2 et la profondeur des arbres. En limitant max_depth (4-8) et en appliquant une régularisation L2 modérée (0.01-0.5), on réduit le risque d'overfitting (écart train_f1 - eval_f1 faible). Un learning_rate faible (0.01-0.1) assure une convergence stable, tandis qu'un max_iter suffisant (100-300) permet un apprentissage efficace sans surcoût computationnel excessif. L'objectif est d'atteindre eval_f1 >= 0.98 en équilibrant biais et variance.",
+    "model_type": "hist_gradient_boosting",
+    "hyperparameters": {
+      "max_iter": 100,
+      "max_depth": 8,
+      "learning_rate": 0.09450811404352512,
+      "l2_regularization": 0.36436169035458715
+    },
+    "n_trials": 20,
+    "train_f1": 0.993772833998013,
+    "eval_f1": 0.9251707079001819,
+    "val_class_report": {
+      "0": {
+        "precision": 0.9996411268616544,
+        "recall": 0.9998923110058152,
+        "f1-score": 0.9997667031566857,
+        "support": 55716.0
+      },
+      "1": {
+        "precision": 0.925,
+        "recall": 0.7872340425531915,
+        "f1-score": 0.8505747126436781,
+        "support": 94.0
+      },
+      "accuracy": 0.9995341336678014,
+      "macro avg": {
+        "precision": 0.9623205634308272,
+        "recall": 0.8935631767795034,
+        "f1-score": 0.9251707079001819,
+        "support": 55810.0
+      },
+      "weighted avg": {
+        "precision": 0.9995154098588772,
+        "recall": 0.9995341336678014,
+        "f1-score": 0.99951542118019,
+        "support": 55810.0
+      }
+    }
+  },
+  {
+    "run_id": 2,
+    "hypothesis": "Le premier essai avec HistGradientBoosting a révélé un overfitting (train_f1=0.9938 vs eval_f1=0.9252). Pour réduire cet écart, je propose de réduire la complexité du modèle en limitant max_depth (4-6) et en augmentant la régularisation L2 (0.1-1.0). Un learning_rate plus faible (0.001-0.05) et un max_iter plus élevé (200-400) permettront une convergence plus stable et progressive, ciblant spécifiquement l'amélioration du F1-score pour la classe minoritaire (actuellement 0.8506). L'objectif est de minimiser l'écart train_f1 - eval_f1 tout en maximisant eval_f1, en exploitant la robustesse de HistGradientBoosting face au déséquilibre des classes.",
+    "model_type": "hist_gradient_boosting",
+    "hyperparameters": {
+      "max_iter": 220,
+      "max_depth": 6,
+      "learning_rate": 0.03532578108385455,
+      "l2_regularization": 0.8371737862695309
+    },
+    "n_trials": 30,
+    "train_f1": 0.980912330588404,
+    "eval_f1": 0.9276335038023984,
+    "val_class_report": {
+      "0": {
+        "precision": 0.9996411333010353,
+        "recall": 0.9999102591715127,
+        "f1-score": 0.999775678125028,
+        "support": 55716.0
+      },
+      "1": {
+        "precision": 0.9367088607594937,
+        "recall": 0.7872340425531915,
+        "f1-score": 0.8554913294797688,
+        "support": 94.0
+      },
+      "accuracy": 0.9995520516036552,
+      "macro avg": {
+        "precision": 0.9681749970302644,
+        "recall": 0.8935721508623521,
+        "f1-score": 0.9276335038023984,
+        "support": 55810.0
+      },
+      "weighted avg": {
+        "precision": 0.9995351373573172,
+        "recall": 0.9995520516036552,
+        "f1-score": 0.9995326620208773,
+        "support": 55810.0
+      }
+    }
+  },
+  {
+    "run_id": 3,
+    "hypothesis": "Le dataset est fortement déséquilibré (classe minoritaire < 0.2%), et les essais précédents avec HistGradientBoosting ont montré un overfitting (écart train_f1 - eval_f1 > 0.05). XGBoost offre un meilleur contrôle sur la régularisation et la complexité des arbres via max_depth, subsample, colsample_bytree et learning_rate. En limitant max_depth (4-8) et en utilisant subsample/colsample_bytree entre 0.7 et 1.0, on réduit l'overfitting. Un learning_rate faible (0.01-0.1) et n_estimators modéré (100-300) assurent une convergence stable. L'objectif est d'atteindre eval_f1 >= 0.98 en améliorant le F1-score de la classe minoritaire (actuellement ~0.85).",
+    "model_type": "xgboost",
+    "hyperparameters": {
+      "n_estimators": 300,
+      "max_depth": 6,
+      "learning_rate": 0.04497071059583655,
+      "subsample": 0.9540988370165996,
+      "colsample_bytree": 0.9276921560025814
+    },
+    "n_trials": 30,
+    "train_f1": 1.0,
+    "eval_f1": 0.9194146085078883,
+    "val_class_report": {
+      "0": {
+        "precision": 0.9996231832047371,
+        "recall": 0.9998743628401178,
+        "f1-score": 0.9997487572456616,
+        "support": 55716.0
+      },
+      "1": {
+        "precision": 0.9125,
+        "recall": 0.776595744680851,
+        "f1-score": 0.8390804597701149,
+        "support": 94.0
+      },
+      "accuracy": 0.9994982977960939,
+      "macro avg": {
+        "precision": 0.9560615916023685,
+        "recall": 0.8882350537604844,
+        "f1-score": 0.9194146085078883,
+        "support": 55810.0
+      },
+      "weighted avg": {
+        "precision": 0.9994764428495814,
+        "recall": 0.9994982977960939,
+        "f1-score": 0.9994781458863585,
+        "support": 55810.0
+      }
+    }
+  },
+  {
+    "run_id": 4,
+    "hypothesis": "Le dataset est fortement déséquilibré (classe minoritaire < 0.2%), et les essais précédents avec HistGradientBoosting et XGBoost ont montré un overfitting significatif (écart train_f1 - eval_f1 > 0.05). RandomForest est une alternative robuste pour ce type de problème, car il réduit naturellement la variance via l'agrégation d'arbres et permet de contrôler la complexité via max_depth, min_samples_split et min_samples_leaf. En limitant max_depth (6-12) et en augmentant min_samples_split (5-10) et min_samples_leaf (2-5), on réduit l'overfitting. Le paramètre max_features='sqrt' limite la variance sans sacrifier trop de biais. L'objectif est d'améliorer eval_f1 en ciblant une meilleure généralisation, tout en surveillant l'écart train_f1 - eval_f1.",
+    "model_type": "random_forest",
+    "hyperparameters": {
+      "n_estimators": 210,
+      "max_depth": 12,
+      "min_samples_split": 9,
+      "min_samples_leaf": 4,
+      "max_features": "sqrt"
+    },
+    "n_trials": 30,
+    "train_f1": 0.9411419164259507,
+    "eval_f1": 0.9116301163803341,
+    "val_class_report": {
+      "0": {
+        "precision": 0.99956938314135,
+        "recall": 0.9998923110058152,
+        "f1-score": 0.9997308209959623,
+        "support": 55716.0
+      },
+      "1": {
+        "precision": 0.9210526315789473,
+        "recall": 0.7446808510638298,
+        "f1-score": 0.8235294117647058,
+        "support": 94.0
+      },
+      "accuracy": 0.9994624619243863,
+      "macro avg": {
+        "precision": 0.9603110073601486,
+        "recall": 0.8722865810348225,
+        "f1-score": 0.9116301163803341,
+        "support": 55810.0
+      },
+      "weighted avg": {
+        "precision": 0.9994371384782633,
+        "recall": 0.9994624619243863,
+        "f1-score": 0.9994340474344547,
+        "support": 55810.0
+      }
+    }
+  },
+  {
+    "run_id": 5,
+    "hypothesis": "Les essais précédents avec HistGradientBoosting, XGBoost et RandomForest ont montré un overfitting significatif (écart train_f1 - eval_f1 > 0.05) et un eval_f1 maximal à 0.9276. Le déséquilibre des classes (<0.2% de positifs) suggère que les modèles peinent à généraliser pour la classe minoritaire. ExtraTrees est une alternative robuste car il réduit la variance via l'agrégation d'arbres tout en explorant plus agressivement l'espace des features (max_features=\"log2\"). En limitant max_depth (6-10) et en augmentant min_samples_split (5-10) et min_samples_leaf (2-5), on réduit l'overfitting tout en conservant une bonne capacité d'apprentissage pour la classe minoritaire. L'objectif est d'améliorer eval_f1 en ciblant une meilleure généralisation, avec un n_trials de 30 pour explorer efficacement cet espace.",
+    "model_type": "extra_trees",
+    "hyperparameters": {
+      "n_estimators": 390,
+      "max_depth": 10,
+      "min_samples_split": 10,
+      "min_samples_leaf": 4,
+      "max_features": "log2"
+    },
+    "n_trials": 30,
+    "train_f1": 0.9223609828952105,
+    "eval_f1": 0.8975657566295017,
+    "val_class_report": {
+      "0": {
+        "precision": 0.9995693367786391,
+        "recall": 0.9997846220116304,
+        "f1-score": 0.9996769678044578,
+        "support": 55716.0
+      },
+      "1": {
+        "precision": 0.8536585365853658,
+        "recall": 0.7446808510638298,
+        "f1-score": 0.7954545454545454,
+        "support": 94.0
+      },
+      "accuracy": 0.9993549543092636,
+      "macro avg": {
+        "precision": 0.9266139366820025,
+        "recall": 0.87223273653773,
+        "f1-score": 0.8975657566295017,
+        "support": 55810.0
+      },
+      "weighted avg": {
+        "precision": 0.9993235812649647,
+        "recall": 0.9993549543092636,
+        "f1-score": 0.9993329988436821,
+        "support": 55810.0
+      }
+    }
+  }
+]
