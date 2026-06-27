@@ -72,7 +72,7 @@ class HyperparameterOptimizer:
         """Lance l'optimisation TPE et retourne le meilleur résultat.
 
         Args:
-            prepared_run: identifiant ('iris_001_001') ou chemin d'un run de `data/02_prepared`.
+            prepared_run: identifiant ('iris_001') ou chemin d'un run de `data/01_prepared`.
             model_type: nom du modèle (cf. `available_models()`).
             search_space: plages d'hyperparamètres (cf. `search_space` module).
             n_trials: nombre d'essais (défaut : valeur de l'instance).

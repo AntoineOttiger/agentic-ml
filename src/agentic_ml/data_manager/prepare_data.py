@@ -13,7 +13,6 @@ from agentic_ml.config import (
     DEFAULT_TEST_SIZE,
     DROP_COLS,
     PREP_DATA_DIR,
-    PREPROC_FILE,
     PROJECT_ROOT,
     RUN_FOLDER_WIDTH,
     TARGET_COL,
@@ -23,20 +22,14 @@ from agentic_ml.config import (
 class DataSplitter:
     def __init__(
         self,
-        preproc_run_dir: Path | str,
+        source_file: Path | str,
         output_dir: Path | str = PREP_DATA_DIR,
         mode: str = DEFAULT_MODE,
         test_size: float = DEFAULT_TEST_SIZE,
         val_size: float = DEFAULT_VAL_SIZE,
         random_seed: int = DEFAULT_RANDOM_SEED,
     ) -> None:
-        self.preproc_run_dir = Path(preproc_run_dir)
-        if self.preproc_run_dir.is_file():
-            self.source_path = self.preproc_run_dir
-            self._raw_input = True
-        else:
-            self.source_path = self.preproc_run_dir / PREPROC_FILE
-            self._raw_input = False
+        self.source_file = Path(source_file)
         self.output_dir = Path(output_dir)
         self.mode = mode
         self.test_size = test_size
@@ -47,11 +40,7 @@ class DataSplitter:
             raise ValueError(f"mode must be '2way' or '3way', got '{mode}'")
 
     def _next_run_folder(self) -> Path:
-        if self._raw_input:
-            prefix = f"{self.source_path.stem}_raw_"
-        else:
-            dataset_name, preproc_idx = self.preproc_run_dir.name.rsplit("_", 1)
-            prefix = f"{dataset_name}_{preproc_idx}_"
+        prefix = f"{self.source_file.stem.lower()}_"
         existing = [
             int(p.name[len(prefix):])
             for p in self.output_dir.iterdir()
@@ -81,7 +70,7 @@ class DataSplitter:
         }
 
     def split_and_save(self) -> Path:
-        df = pd.read_csv(self.source_path)
+        df = pd.read_csv(self.source_file)
 
         cols_to_drop = [c for c in DROP_COLS if c in df.columns]
         if cols_to_drop:
@@ -89,7 +78,7 @@ class DataSplitter:
 
         if TARGET_COL not in df.columns:
             raise ValueError(
-                f"Target column '{TARGET_COL}' not found in {self.source_path}. "
+                f"Target column '{TARGET_COL}' not found in {self.source_file}. "
                 f"Available columns: {list(df.columns)}"
             )
 
@@ -117,8 +106,7 @@ class DataSplitter:
         metadata = {
             "run_id": run_id,
             "created_at": datetime.now().isoformat(timespec="seconds"),
-            "preproc_run_id": "raw" if self._raw_input else self.preproc_run_dir.name,
-            "source_file": str(self.source_path.relative_to(PROJECT_ROOT)).replace("\\", "/"),
+            "source_file": str(self.source_file.relative_to(PROJECT_ROOT)).replace("\\", "/"),
             "mode": self.mode,
             "random_seed": self.random_seed,
             "target_column": TARGET_COL,

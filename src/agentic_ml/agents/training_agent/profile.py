@@ -16,10 +16,10 @@ from agentic_ml.training.dataset import resolve_run_dir
 
 
 def latest_prepared_run() -> str:
-    """Renvoie l'identifiant du run le plus récent de `data/02_prepared/`.
+    """Renvoie l'identifiant du run le plus récent de `data/01_prepared/`.
 
     S'appuie sur la convention de nommage de `DataSplitter` :
-    `<dataset>_<preproc_idx>_<prepared_idx>`. Le run le plus récent est celui
+    `<dataset>_<prepared_idx>` (ex. `iris_001`). Le run le plus récent est celui
     dont le dossier a la date de modification la plus récente (st_mtime),
     ce qui fonctionne correctement avec plusieurs datasets coexistants.
     """
@@ -28,8 +28,8 @@ def latest_prepared_run() -> str:
         for p in PREP_DATA_DIR.iterdir():
             if not p.is_dir():
                 continue
-            parts = p.name.rsplit("_", 2)
-            if len(parts) == 3 and parts[1].isdigit() and parts[2].isdigit():
+            parts = p.name.rsplit("_", 1)
+            if len(parts) == 2 and parts[1].isdigit():
                 candidates.append(p)
 
     if not candidates:

@@ -5,10 +5,8 @@ Automatisation de la recherche de modèle ML et d'hyperparamètres via un agent 
 ### Structure
 
 - `data/00_raw/` → dataset Iris (CSV)
-- `data/01_preproc/` → data preprocessée par preproc_agent — runs versionnés `<dataset>_<preproc_idx>` (`iris_001`, …)
-- `data/02_prepared/` → splits versionnés `<dataset>_<preproc_idx>_<prepared_idx>` (`iris_001_001`, …) — chaque run contient `train.csv`, `val.csv`, `test.csv`, `metadata.json`
+- `data/01_prepared/` → splits versionnés `<dataset>_<prepared_idx>` (`iris_001`, …) — chaque run contient `train.csv`, `val.csv`, `test.csv`, `metadata.json`
 - `notebooks/` → exploration
-- `scripts/prepare_data.py` → CLI pour `DataSplitter` (aucune logique métier)
 - `src/agentic_ml/data/prepare_data.py` → `DataSplitter` : split stratifié 2way ou 3way
 - `src/agentic_ml/training`→ module de gestion taining/eval/optim des models , HyperparameterOptimizer à utiliser par l'agent
 - `src/agentic_ml/agent` → module de gestion de l'agent
