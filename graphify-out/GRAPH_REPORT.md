@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 347 nodes · 544 edges · 25 communities (21 shown, 4 thin omitted)
-- Extraction: 89% EXTRACTED · 11% INFERRED · 0% AMBIGUOUS · INFERRED: 62 edges (avg confidence: 0.78)
+- 347 nodes · 545 edges · 25 communities (21 shown, 4 thin omitted)
+- Extraction: 88% EXTRACTED · 12% INFERRED · 0% AMBIGUOUS · INFERRED: 63 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `dc8d3022`
+- Built from commit: `01052257`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -44,10 +44,10 @@
 4. `Système agentique de préparation de données pour le ML` - 13 edges
 5. `run_agent()` - 10 edges
 6. `write_artifacts()` - 9 edges
-7. `run_invariance_gate()` - 9 edges
-8. `launch_ml_pipeline()` - 9 edges
-9. `HyperparameterOptimizer` - 9 edges
-10. `_assert()` - 8 edges
+7. `run_prepare_agent()` - 9 edges
+8. `run_invariance_gate()` - 9 edges
+9. `launch_ml_pipeline()` - 9 edges
+10. `HyperparameterOptimizer` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `parse_args()` --calls--> `available_models()`  [INFERRED]
@@ -56,10 +56,10 @@
   scripts/run_optimization.py → src/agentic_ml/training/optimizer.py
 - `main()` --calls--> `run_agent()`  [INFERRED]
   scripts/run_training_agent.py → src/agentic_ml/agents/training_agent/graph.py
-- `main()` --calls--> `format_class_report()`  [INFERRED]
-  scripts/run_training_agent.py → src/agentic_ml/agents/training_agent/report.py
 - `test_launch_ml_pipeline_is_json_serializable()` --calls--> `launch_ml_pipeline()`  [INFERRED]
   tests/test_pipeline_serialization.py → src/agentic_ml/agents/training_agent/tools.py
+- `main()` --calls--> `run_prepare_agent()`  [INFERRED]
+  scripts/run_prepare_agent.py → src/agentic_ml/agents/prepare_agent/graph.py
 
 ## Import Cycles
 - None detected.
@@ -67,8 +67,8 @@
 ## Communities (25 total, 4 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.08
-Nodes (36): Path, Exécute la boucle agentique de bout en bout et renvoie l'état final.      Args:, run_agent(), evaluate_stop(), _evaluate_stop_agent(), _evaluate_stop_convergence(), propose_experiment(), Nœuds de la boucle agentique.  Seul `propose_experiment` mobilise le LLM. `run_p (+28 more)
+Cohesion: 0.07
+Nodes (43): BaseChatModel, Path, build_agent_graph(), Construit et compile le graphe de la boucle de recherche.      Flux : propose_ex, Exécute la boucle agentique de bout en bout et renvoie l'état final.      Args:, run_agent(), evaluate_stop(), _evaluate_stop_agent() (+35 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.09
@@ -87,12 +87,12 @@ Cohesion: 0.05
 Nodes (59): BaseModel, DataFrame, _assert(), _assert_target_intact(), check_cleaning_output(), check_entry(), check_fe_output(), check_split_output() (+51 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.14
-Nodes (15): Namespace, build_prepare_graph(), Assemblage du StateGraph de préparation et point d'entrée `run_prepare_agent`., Construit et compile le graphe du pipeline de préparation., Exécute le pipeline cleaning → FE → split de bout en bout.      `input_csv` et `, run_prepare_agent(), main(), parse_args() (+7 more)
+Cohesion: 0.10
+Nodes (19): Namespace, build_prepare_graph(), Assemblage du StateGraph de préparation et point d'entrée `run_prepare_agent`., Construit et compile le graphe du pipeline de préparation., Exécute le pipeline cleaning → FE → split de bout en bout.      `input_csv` et `, run_prepare_agent(), main(), parse_args() (+11 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.06
-Nodes (41): Any, ExtraTreesClassifier, GaussianNB, HistGradientBoostingClassifier, LinearDiscriminantAnalysis, Pipeline, RandomForestClassifier, SVC (+33 more)
+Cohesion: 0.07
+Nodes (36): Any, ExtraTreesClassifier, GaussianNB, HistGradientBoostingClassifier, LinearDiscriminantAnalysis, Pipeline, RandomForestClassifier, SVC (+28 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.29
@@ -119,8 +119,8 @@ Cohesion: 0.19
 Nodes (11): _dtypes_map(), _lib_versions(), Écriture des artefacts de sortie (§10) dans `output_dir`.  - train/val/test.csv, Matérialise tous les artefacts et renvoie le répertoire de sortie., write_artifacts(), _write_json(), Recette rejouable (§7) : sérialisation et ré-application sans l'agent.  L'histor, Chemin relatif déterministe du script versionné d'une étape. (+3 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.09
-Nodes (20): BaseCallbackHandler, BaseChatModel, LLMResult, make_llm(), Instancie le client LLM selon AGENT_PROVIDER, avec rate limiting., build_agent_graph(), Assemblage du StateGraph et point d'entrée `run_agent`., Construit et compile le graphe de la boucle de recherche.      Flux : propose_ex (+12 more)
+Cohesion: 0.12
+Nodes (14): BaseCallbackHandler, LLMResult, make_llm(), Instancie le client LLM selon AGENT_PROVIDER, avec rate limiting., get_rate_limiter(), RateLimitCallback, RateLimiter, Rate limiter pour les APIs LLM (thread-safe).  Fenêtres glissantes séparées : (+6 more)
 
 ### Community 22 - "Community 22"
 Cohesion: 0.27
@@ -135,24 +135,24 @@ Cohesion: 0.50
 Nodes (3): Sortie structurée du LLM pour une étape de cleaning ou de feature engineering., Décision de l'agent pour le prochain pas d'une phase., StepProposal
 
 ## Knowledge Gaps
-- **27 isolated node(s):** `Syntaxe`, `Étape 1 — Parser les arguments`, `Étape 2 — Inspecter le dataset`, `Étape 3 — Calculer le nom du notebook de sortie`, `Étape 4 — Lire le template` (+22 more)
+- **27 isolated node(s):** `Structure`, `Conventions`, `graphify`, `1. Objectif`, `2.1 Définition` (+22 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `_agent_step()` connect `Community 4` to `Community 7`, `Community 9`, `Community 13`, `Community 20`, `Community 23`?**
-  _High betweenness centrality (0.097) - this node is a cross-community bridge._
+- **Why does `_agent_step()` connect `Community 4` to `Community 0`, `Community 7`, `Community 9`, `Community 13`, `Community 23`?**
+  _High betweenness centrality (0.094) - this node is a cross-community bridge._
 - **Why does `build_estimator()` connect `Community 1` to `Community 0`, `Community 6`?**
   _High betweenness centrality (0.085) - this node is a cross-community bridge._
 - **Why does `PrepState` connect `Community 4` to `Community 5`, `Community 13`?**
-  _High betweenness centrality (0.076) - this node is a cross-community bridge._
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
 - **Are the 9 inferred relationships involving `_agent_step()` (e.g. with `apply_transform()` and `compile_transform()`) actually correct?**
   _`_agent_step()` has 9 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `Entry point: lance une optimisation d'hyperparamètres (Optuna TPE) sur un run pr`, `Entry point: run the agentic data-preparation pipeline (cleaning → FE → split).`, `Entry point: run the autonomous model/hyperparameter search agent.` to the rest of the system?**
+- **What connects `Structure`, `Conventions`, `graphify` to the rest of the system?**
   _148 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.07564102564102564 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0666049953746531 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.08669354838709678 - nodes in this community are weakly interconnected._
