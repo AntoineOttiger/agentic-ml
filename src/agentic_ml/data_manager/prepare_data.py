@@ -19,6 +19,29 @@ from agentic_ml.config import (
 )
 
 
+def next_run_folder(
+    source_file: Path | str, output_dir: Path | str = PREP_DATA_DIR
+) -> Path:
+    """Renvoie le prochain dossier de run versionné `<dataset>_<idx>` (idx zfill).
+
+    Source de vérité unique pour la convention de nommage des splits, partagée
+    entre `DataSplitter` et le `prepare_agent` (qui matérialise ses artefacts au
+    même endroit). Crée `output_dir` si besoin mais n'alloue pas le sous-dossier.
+    """
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    prefix = f"{Path(source_file).stem.lower()}_"
+    existing = [
+        int(p.name[len(prefix):])
+        for p in output_dir.iterdir()
+        if p.is_dir()
+        and p.name.startswith(prefix)
+        and p.name[len(prefix):].isdigit()
+    ]
+    next_idx = max(existing, default=0) + 1
+    return output_dir / f"{prefix}{str(next_idx).zfill(RUN_FOLDER_WIDTH)}"
+
+
 class DataSplitter:
     def __init__(
         self,
@@ -40,27 +63,46 @@ class DataSplitter:
             raise ValueError(f"mode must be '2way' or '3way', got '{mode}'")
 
     def _next_run_folder(self) -> Path:
-        prefix = f"{self.source_file.stem.lower()}_"
-        existing = [
-            int(p.name[len(prefix):])
-            for p in self.output_dir.iterdir()
-            if p.is_dir()
-            and p.name.startswith(prefix)
-            and p.name[len(prefix):].isdigit()
-        ]
-        next_idx = max(existing, default=0) + 1
-        return self.output_dir / f"{prefix}{str(next_idx).zfill(RUN_FOLDER_WIDTH)}"
+        return next_run_folder(self.source_file, self.output_dir)
 
     def _stratified_split(
-        self, df: pd.DataFrame, frac: float, seed: int
+        self, df: pd.DataFrame, frac: float, seed: int, target_col: str | None = None
     ) -> tuple[pd.DataFrame, pd.DataFrame]:
+        target = target_col or TARGET_COL
         parts = [
             group.sample(frac=frac, random_state=seed)
-            for _, group in df.groupby(TARGET_COL)
+            for _, group in df.groupby(target)
         ]
         sampled = pd.concat(parts)
         remainder = df.drop(sampled.index)
         return sampled.reset_index(drop=True), remainder.reset_index(drop=True)
+
+    def split_frame(
+        self, df: pd.DataFrame, target_column: str | None = None
+    ) -> dict[str, pd.DataFrame]:
+        """Partitionne un dataframe **déjà en mémoire** (classification stratifiée).
+
+        Utilisé par la phase 3 du `prepare_agent`, qui possède déjà le dataframe
+        post-feature-engineering : on ne relit pas de CSV et on ne supprime aucune
+        colonne ici (le nettoyage des colonnes relève de la phase 1). Renvoie les
+        partitions sans les écrire — l'écriture des artefacts est gérée par l'appelant.
+        """
+        target = target_column or TARGET_COL
+        if target not in df.columns:
+            raise ValueError(
+                f"Target column '{target}' not found. Available columns: {list(df.columns)}"
+            )
+
+        test_df, remainder = self._stratified_split(
+            df, self.test_size, self.random_seed, target
+        )
+        if self.mode == "3way":
+            adjusted_val_frac = self.val_size / (1.0 - self.test_size)
+            val_df, train_df = self._stratified_split(
+                remainder, adjusted_val_frac, self.random_seed, target
+            )
+            return {"train": train_df, "val": val_df, "test": test_df}
+        return {"train": remainder, "test": test_df}
 
     def _split_info(self, df: pd.DataFrame, filename: str) -> dict:
         return {

@@ -20,10 +20,6 @@ Automatisation de la recherche de modèle ML et d'hyperparamètres via un agent 
 - Les splits sont générés via `python scripts/prepare_data.py [--mode 2way|3way] [--test-size] [--val-size] [--seed]`.
 - Défauts : mode `3way`, test 20 %, val 20 %, seed 42.
 
-### État du projet
-
-La couche données (`DataSplitter`) est implémentée. L'agent (nœuds LangGraph, tools ML, pipeline) reste à créer.
-
 ## graphify
 
 This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
